@@ -1,0 +1,10 @@
+Notas: abrir terminal ctrl + shift + ñ
+clickear en + , Seleccionar perfil predeterminado, seleccionar git bash // siempre va a abrir la terminal en bash
+
+git switch Beta  // cambiar a rama beta
+
+Pushear
+git add .
+git status
+git commit -m "aqui va el mensaje"
+git push origin Beta                // pushear a rama beta
