@@ -7,4 +7,32 @@ Pushear
 git add .
 git status
 git commit -m "aqui va el mensaje"
-git push origin Beta                // pushear a rama beta
+git push origin beta                // pushear a rama beta
+
+Notas:
+Vamos a trabajar en la rama beta, o igual puedes crear una por separado, luego ya las mergeamos y vamos actualizando el main
+
+Tareas:
+1. definir paleta de colores
+    Color primario
+    Color secundario
+    Color grisClaro
+    color oscuro
+    color detalles
+
+2.definir fuente
+    fuente: 
+
+3. Hacer el logo.png e icono .ico de la pagina
+
+4. Haer los layouts
+    header
+        logos
+        navegacion
+
+    main,article
+    
+
+    foter
+
+
