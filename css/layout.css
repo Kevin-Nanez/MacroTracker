@@ -1,0 +1,53 @@
+:root{
+    --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --amarillo: #ffa31a;
+    --celeste: #00acee;
+    --grisCalro: #808080;
+    --grisOscuro: #292929;
+    --negro: #1b1b1b;
+    --blanco: #fff;
+
+
+}
+
+/* globales  */
+.h1logo{
+    font-family: var(--fuenteTitulos);
+}
+
+.h4logo{
+    font-family: var(--fuenteTitulos);
+    font-size: 20px;
+    font-weight:lighter !important;
+}
+
+
+
+
+
+/* Banner  */
+
+.banner{
+    background-image:url(/Assets/img/banner.png) ;
+    height: 200px;
+    margin-top: 58px;
+}
+.banner img{
+    height: 75px;
+}
+
+@media(min-width: 480px) and (max-width: 767px) { 
+    .banner img{
+        height: 100px;
+    }
+}
+
+@media(min-width: 768px) { 
+    .banner img{
+        height: 120px;
+    }
+}
+
+
+
