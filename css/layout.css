@@ -2,8 +2,8 @@
     --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --amarillo: #ffa31a;
-    --celeste: #00acee;
-    --grisCalro: #808080;
+    --celeste: #0796cf;
+    --grisCalro: #9a9797;
     --grisOscuro: #292929;
     --negro: #1b1b1b;
     --blanco: #fff;
@@ -12,6 +12,26 @@
 }
 
 /* globales  */
+header i, ul a{
+    color: var(--blanco);   
+}
+
+main{
+    height: 400px;
+    /* gradiente */
+    background: rgb(77,72,72);
+    background: radial-gradient(circle, rgba(77,72,72,1) 21%, rgba(75,75,68,1) 58%, rgba(87,87,87,1) 96%);
+
+
+}
+
+
+
+
+
+
+
+/* Banner  */
 .h1logo{
     font-family: var(--fuenteTitulos);
 }
@@ -22,16 +42,10 @@
     font-weight:lighter !important;
 }
 
-
-
-
-
-/* Banner  */
-
 .banner{
     background-image:url(/Assets/img/banner.png) ;
     height: 200px;
-    margin-top: 58px;
+
 }
 .banner img{
     height: 75px;
