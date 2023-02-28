@@ -12,6 +12,8 @@
 }
 
 /* globales  */
+
+
 header i, ul a{
     color: var(--blanco);   
 }
@@ -23,6 +25,10 @@ main{
     background: radial-gradient(circle, rgba(77,72,72,1) 21%, rgba(75,75,68,1) 58%, rgba(87,87,87,1) 96%);
 
 
+}
+
+footer{
+    background-color:var(--grisOscuro) ;
 }
 
 
