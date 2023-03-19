@@ -9,6 +9,9 @@ git status
 git commit -m "aqui va el mensaje"
 git push origin beta                // pushear a rama beta
 
+
+git pull origin beta  // obtener cambios de otros colaboradores
+
 Notas:
 Vamos a trabajar en la rama beta, o igual puedes crear una por separado, luego ya las mergeamos y vamos actualizando el main
 
