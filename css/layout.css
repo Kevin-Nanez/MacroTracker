@@ -13,16 +13,20 @@
 
 /* globales  */
 
+body{
+    background: rgb(77,72,72);
+    background: radial-gradient(circle, rgba(77,72,72,1) 21%, rgba(75,75,68,1) 58%, rgba(87,87,87,1) 96%);
+
+}
 
 header i, ul a{
     color: var(--blanco);   
 }
 
 main{
-    height: 400px;
-    /* gradiente */
-    background: rgb(77,72,72);
-    background: radial-gradient(circle, rgba(77,72,72,1) 21%, rgba(75,75,68,1) 58%, rgba(87,87,87,1) 96%);
+    
+
+
 
 
 }
@@ -70,4 +74,7 @@ footer{
 }
 
 
+.text-justify {
+    text-align: justify !important;
+  }
 

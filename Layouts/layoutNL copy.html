@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logeado</title>
+  <title> NoLogeado</title>
   <!-- local CSS -->
   <link rel="stylesheet" href="/css/layout.css">
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
@@ -17,12 +17,14 @@
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="../css/styles.css">
+
 </head>
 
 <body>
   <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Toggle button -->
@@ -35,8 +37,9 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
-          <a class="navbar-brand mt-2 mt-lg-0" href="#">
-            <img src="Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo"
+          
+          <a class="navbar-brand mt-sm-0 mb-auto" href="#">
+            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo"
               loading="lazy" />
           </a>
           <!-- Left links -->
@@ -45,10 +48,7 @@
               <a class="nav-link" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Agregar Alimento</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Diario</a>
+              <a class="nav-link" href="#">Noticias</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -58,26 +58,14 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
           <!-- Icon -->
-          <a class="link-secondary me-3" href="#">
-            <i class="fas fa-newspaper""></i>
-              <span class=" badge rounded-pill badge-notification bg-danger">!</span>
-          </a>
-
-          <!-- Notifications -->
-          <div class="dropdown">
-            <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user-edit""></i>
-              </a>
-              <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                </li>
-                </ul>
-          </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link primerElemento" href="#">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Registrarse</a>
+            </li>
+          </ul>
         </div>
         <!-- Right elements -->
       </div>
@@ -136,7 +124,8 @@
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       <h6>Kevin Josefath Nañez de la Rosa</h6>
       <h6>Jorge Luis Picazo Picazo</h6>
-      <a class="text-white" href="#">UANL</a>
+      <h6>Daniel Eduardo Mesias Cortina</h6>
+      <a class="text-white" href="https://www.uanl.mx/">UANL</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -144,6 +133,8 @@
   <!-- CDNS -->
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+<script src="../js/script.js"></script>
+
 </body>
 
 </html>
