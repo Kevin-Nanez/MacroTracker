@@ -75,10 +75,20 @@ footer{
     border-radius: 1rem;
   }
   .fw-700{
-    font-weight: 700;;
+    font-weight: 700!important;
   }
 
   .amarillo{
     background-color: var(--amarillo)!important;
-    border:  2px solid var(--negro)!important;
+    
   }
+
+  .brodenegro1{
+    border:  1px solid var(--negro) !important;
+  }
+
+  .brodenegro2{
+    border:  2px solid var(--negro) !important;
+  }
+
+
