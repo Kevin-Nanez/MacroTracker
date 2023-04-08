@@ -23,13 +23,6 @@ header i, ul a{
     color: var(--blanco);   
 }
 
-main{
-    
-
-
-
-
-}
 
 footer{
     background-color:var(--grisOscuro) ;
@@ -78,3 +71,7 @@ footer{
     text-align: justify !important;
   }
 
+  .contenedorGrisOsc{
+    background-color: var(--grisOscuro);
+    border-radius: 1rem;
+  }

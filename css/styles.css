@@ -1,3 +1,16 @@
+:root{
+    --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --amarillo: #ffa31a;
+    --celeste: #0796cf;
+    --grisCalro: #9a9797;
+    --grisOscuro: #292929;
+    --negro: #1b1b1b;
+    --blanco: #fff;
+
+
+}
+
 /* index */
 
 
@@ -43,4 +56,10 @@
         margin-right: .85rem;
     }
 }
-flex-direction
+
+/* ajustes Perfil */
+
+.label_gris{
+    color: var(--grisCalro);
+    font-weight: 600;
+}
