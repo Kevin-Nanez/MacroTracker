@@ -77,3 +77,8 @@ footer{
   .fw-700{
     font-weight: 700;;
   }
+
+  .amarillo{
+    background-color: var(--amarillo)!important;
+    border:  2px solid var(--negro)!important;
+  }
