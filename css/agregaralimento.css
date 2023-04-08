@@ -1,0 +1,92 @@
+.search-container {
+    margin: auto; 
+    width: 80%; 
+    display: flex; 
+    background-color: orange; 
+    border-radius: 5px; 
+    margin-top: 20px;
+  }
+  
+.search-container input[type="text"] {
+    flex: 1;
+    border: none; 
+    background-color: orange; 
+    color: white; 
+    padding: 10px; 
+    font-size: 16px; 
+    padding-right: 200px;
+    border-radius: 5px; 
+    width: fit-content;
+    color: #292929;
+}
+
+.search-container button[type="submit"] {
+    padding: 10px; 
+    background-color: orange; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px;
+    color: #292929;
+}
+
+.search-container button{
+    padding: 10px; 
+    background-color: orange; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    color: #292929;
+}
+
+.search-container button:hover {
+    background-color: #fcb900; 
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #292929;
+}
+
+.container-2 {
+    background-color: #9a9797;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+.espacio {
+    color: #292929;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.espacio input[type="number"]{
+    background-color: #292929;
+    border: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 10px;
+    width: 70px;
+    color: white;
+}
+
+.btn.btn-custom{
+    background-color:#fcb900;
+    font-size: 1em;
+}
+
+.btn.btn-custom:hover{
+    background-color:#fac73d;
+}
+
+.btn.btn-custom:active{
+    background-color:#a97d07;
+}
+  
+@media (max-width: 600px){
+    form .search-container{
+        width: 50%;
+        margin: 10px 0 0 60px;
+    }
+}
