@@ -1,0 +1,134 @@
+.menudiario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 1400px;
+    height: 80px;
+    background-color: orange;
+    color: #292929;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.flecha{
+    border: none;
+    background-color: transparent;
+    color: #292929;
+}
+
+.flecha:hover{
+    background-color: rgba(128, 128, 128, 0.248);
+}
+
+.flecha-derecha{
+    margin-left: 100px;
+}
+
+.flecha-izquierda{
+    margin-right: 100px;
+}
+
+.icono-calendario{
+    margin-left: 200px;
+}
+
+.container-3 {
+    background-color: #292929;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+.espacio {
+    background-color: #292929;
+    color: white;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-4 {
+    background-color: #292929;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.alimento{
+    background-color: #6c6b6b;
+    color: #292929;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#idelete{
+    height: 100px;
+    color: #292929;
+}
+
+#aalimento{
+    background-color: orange;
+    color: #292929;
+}
+
+.table-custom th{
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+    border: none;
+}
+
+.alimento2{
+    background-color: #6c6b6b;
+    color: #292929;
+    height: auto;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 25px;
+    align-items: center;
+}
+
+table tr{
+    margin-top: 20px;
+}
+
+button:hover{
+    color: white;
+}
+
+@media (max-width: 50em){
+    table{
+        width: 100%;
+    }
+
+    table tr{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    table td[data-title]{
+        display: flex;
+    }
+
+    table td[data-title]::before{
+        content: attr(data-title);
+        width: 200px;
+        color: white;
+        font-weight: bold;
+    }
+
+    table th{
+        display: none;
+    }
+}
