@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diario</title>
   <!-- local CSS -->
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/diario.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/diario.css">
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- CDNS -->
   <!-- Font Awesome -->
@@ -61,7 +61,7 @@
           <!-- Icon -->
           <a class="link-secondary me-3" href="#">
             <i class="fas fa-newspaper"></i>
-              <span class=" badge rounded-pill badge-notification bg-danger">!</span>
+            <span class=" badge rounded-pill badge-notification bg-danger">!</span>
           </a>
 
           <!-- Notifications -->
@@ -69,15 +69,15 @@
             <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
               role="button" data-mdb-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user-edit"></i>
-              </a>
-              <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                </li>
-                </ul>
+            </a>
+            <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#">Mi Perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Cerrar Sesion</a>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- Right elements -->
@@ -110,79 +110,84 @@
 
   <main>
     <div class="container-2">
-      <div class="d-flex justify-content-center align-items-center h-500">
-        <div class="menudiario">
-          <div class="d-flex justify-content-center align-items-center position-relative">
-            <div class="row">
-              <div class="col-sm">
-                <button class="flecha flecha-izquierda">&lt;</button>
-              </div>
-              <div class="col-sm">
-                <div class="hoy">Hoy</div>
-              </div>
-              <div class="col-sm">
-                <button class="flecha flecha-derecha">&gt;</button>
-              </div>
+      <div class="d-flex h-500">
+        <div class="d-flex align-items-center justify-content-center justify-content-between ms-5 me-5 menudiario">
+          <div class="row hoy">
+
+              <div class="d-flex flex-nowrap flex-sm-row">
+                <div class="col-sm">
+                  <button class="flecha me-sm-0 me-md-3 me-xl-5">
+                    < </button>
+                </div>
+                <div class="col-sm">
+                  <div class="text-center text-md-start">Hoy</div>
+                </div>
+                <div class="col-sm">
+                  <button class="flecha ms-sm-0 ms-md-3 ms-xl-5">></button>
+                </div>
             </div>
+
+
           </div>
-          <div class="icono-calendario">
+          <div class="icono-calendario me-4 ">
             <i class="fa-solid fa-calendar"></i>
           </div>
         </div>
       </div>
     </div>
 
+
     <div class="container-3">
-        <div class="row">
-          <div class="col-sm espacio fs-4">
-            <p>Objetivo</p>
-            <p>2400</p>
-          </div>
-          <div class="col-1 espacio fs-4">
-            <p>-</p>
-          </div>
-          <div class="col-sm espacio fs-4">
-            <p>Alimentos</p>
-            <p>800</p>
-          </div>
-          <div class="col-1 espacio fs-4">
-            <p>=</p>
-          </div>
-          <div class="col-sm espacio fs-4">
-            <p>Restantes</p>
-            <p>1600</p>
-          </div>
+      <div class="row">
+        <div class="col-sm espacio fs-4">
+          <p>Objetivo</p>
+          <p>2400</p>
         </div>
+        <div class="col-1 espacio fs-4">
+          <p>-</p>
+        </div>
+        <div class="col-sm espacio fs-4">
+          <p>Alimentos</p>
+          <p>800</p>
+        </div>
+        <div class="col-1 espacio fs-4">
+          <p>=</p>
+        </div>
+        <div class="col-sm espacio fs-4">
+          <p>Restantes</p>
+          <p>1600</p>
+        </div>
+      </div>
     </div>
-<!-- Tabla -->
+    <!-- Tabla -->
     <div class="container-4">
       <div class="table-responsive">
-      <table class="table border-0 table-custom">
-        <thead class="thead-dark">
-          <tr>
-            <th>Alimento</th>
-            <th>Cantidad</th>
-            <th>Información</th>
-            <th style="color:transparent;">Botones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="alimento2">
-            <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
-            <td data-title="Cantidad:" class="align-middle">100g</td>
-            <td data-title="Información:" class="align-middle">
-              <div class="row">
-                <div class="col-sm">
-                  <p>P: 40g</p>
-                  <p>C: 2g</p>
+        <table class="table border-0 table-custom">
+          <thead class="thead-dark">
+            <tr>
+              <th>Alimento</th>
+              <th>Cantidad</th>
+              <th>Información</th>
+              <th style="color:transparent;">Botones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="alimento2">
+              <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
+              <td data-title="Cantidad:" class="align-middle">100g</td>
+              <td data-title="Información:" class="align-middle">
+                <div class="row">
+                  <div class="col-sm">
+                    <p>P: 40g</p>
+                    <p>C: 2g</p>
+                  </div>
+                  <div class="col-sm">
+                    <p>G: 4g</p>
+                    <p>200kcal</p>
+                  </div>
                 </div>
-                <div class="col-sm">
-                  <p>G: 4g</p>
-                  <p>200kcal</p>
-                </div>
-              </div>
-            </td>
-            <td class="align-middle">
+              </td>
+              <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
                     <button class="border-0 bg-transparent">
@@ -195,24 +200,24 @@
                     </button>
                   </div>
                 </div>
-            </td>
-          </tr>
-          <tr class="alimento2">
-            <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
-            <td data-title="Cantidad:" class="align-middle">100g</td>
-            <td data-title="Información:" class="align-middle">
-              <div class="row">
-                <div class="col-sm">
-                  <p>P: 40g</p>
-                  <p>C: 2g</p>
+              </td>
+            </tr>
+            <tr class="alimento2">
+              <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
+              <td data-title="Cantidad:" class="align-middle">100g</td>
+              <td data-title="Información:" class="align-middle">
+                <div class="row">
+                  <div class="col-sm">
+                    <p>P: 40g</p>
+                    <p>C: 2g</p>
+                  </div>
+                  <div class="col-sm">
+                    <p>G: 4g</p>
+                    <p>200kcal</p>
+                  </div>
                 </div>
-                <div class="col-sm">
-                  <p>G: 4g</p>
-                  <p>200kcal</p>
-                </div>
-              </div>
-            </td>
-            <td class="align-middle">
+              </td>
+              <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
                     <button class="border-0 bg-transparent">
@@ -225,10 +230,10 @@
                     </button>
                   </div>
                 </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="row">
         <div class="col-sm">
@@ -243,7 +248,7 @@
         </div>
       </div>
     </div>
-<!-- Columnas 
+    <!-- Columnas 
     <div class="container-4">
       <div class="row">
         <div class="col-sm espacio fs-4">
@@ -284,7 +289,7 @@
         </div>
       </div>
       -->
-     <!-- Fila
+    <!-- Fila
       <div class="row alimento">
         <div class="col-sm fs-4">
           <p>Pechuga de pollo</p>
@@ -333,23 +338,23 @@
       </div>
   </div>
   -->
-  </main> 
+  </main>
 
   <footer class="text-center text-white"">
     <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Iframe -->
-      <section class="">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6">
-            <div class="ratio ratio-16x9">
-              <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/P8W_SqjMd9M"
-                title="YouTube video" allowfullscreen></iframe>
-            </div>
+    <div class=" container p-4">
+    <!-- Section: Iframe -->
+    <section class="">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9">
+            <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/P8W_SqjMd9M"
+              title="YouTube video" allowfullscreen></iframe>
           </div>
         </div>
-      </section>
-      <!-- Section: Iframe -->
+      </div>
+    </section>
+    <!-- Section: Iframe -->
     </div>
     <!-- Grid container -->
 
@@ -366,7 +371,7 @@
   <!-- CDNS -->
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
-<script src="../js/script.js"></script>
+  <script src="../js/script.js"></script>
 
 </body>
 

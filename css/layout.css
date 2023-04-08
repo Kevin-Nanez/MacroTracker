@@ -3,12 +3,11 @@
     --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --amarillo: #ffa31a;
     --celeste: #0796cf;
+    --amarilloHover:#F8C123;
     --grisCalro: #9a9797;
     --grisOscuro: #292929;
     --negro: #1b1b1b;
     --blanco: #fff;
-
-
 }
 
 /* globales  */
@@ -66,7 +65,7 @@ footer{
     }
 }
 
-
+/* utilidades */
 .text-justify {
     text-align: justify !important;
   }
@@ -74,4 +73,7 @@ footer{
   .contenedorGrisOsc{
     background-color: var(--grisOscuro);
     border-radius: 1rem;
+  }
+  .fw-700{
+    font-weight: 700;;
   }

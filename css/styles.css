@@ -2,6 +2,7 @@
     --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --amarillo: #ffa31a;
+    --amarilloHover:#F8C123;
     --celeste: #0796cf;
     --grisCalro: #9a9797;
     --grisOscuro: #292929;
@@ -62,4 +63,5 @@
 .label_gris{
     color: var(--grisCalro);
     font-weight: 600;
+    
 }

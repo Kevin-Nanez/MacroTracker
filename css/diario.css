@@ -1,43 +1,48 @@
+:root{
+    --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --amarillo: #ffa31a;
+    --amarilloHover:#F8C123;
+    --celeste: #0796cf;
+    --grisCalro: #9a9797;
+    --grisOscuro:  #292929;
+    --negro: #1b1b1b;
+    --blanco: #fff;
+}
+
 .menudiario{
     display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     width: 1400px;
     height: 80px;
-    background-color: orange;
-    color: #292929;
+    background-color: var(--amarillo);
+    color: var(--negro);
     font-size: 36px;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 
 .flecha{
     border: none;
     background-color: transparent;
-    color: #292929;
+    color: var(--grisOscuro);
 }
 
 .flecha:hover{
     background-color: rgba(128, 128, 128, 0.248);
 }
 
-.flecha-derecha{
-    margin-left: 100px;
-}
 
-.flecha-izquierda{
-    margin-right: 100px;
-}
 
-.icono-calendario{
-    margin-left: 200px;
-}
+
+
+
 
 .container-3 {
-    background-color: #292929;
+    background-color:var(--grisOscuro);
     border-radius: 20px;
     padding: 20px;
     margin: 20px auto;
@@ -45,17 +50,17 @@
     text-align: center;
 }
 .espacio {
-    background-color: #292929;
-    color: white;
+    background-color: var(--grisOscuro);;
+    color: var(--blanco);
     height: auto;
     padding: 10px;
     text-align: center;
 }
 
 .container-4 {
-    background-color: #292929;
+    background-color: var(--grisOscuro);
     border-radius: 20px;
-    color: white;
+    color: var(--blanco);
     padding: 20px;
     margin: 20px auto;
     width: 90%;
@@ -63,8 +68,8 @@
 }
 
 .alimento{
-    background-color: #6c6b6b;
-    color: #292929;
+    background-color: var(--grisCalro);
+    color: var(--grisOscuro);
     height: auto;
     text-align: center;
     border-radius: 10px;
@@ -73,24 +78,24 @@
 
 #idelete{
     height: 100px;
-    color: #292929;
+    color: var(--grisOscuro);
 }
 
 #aalimento{
-    background-color: orange;
-    color: #292929;
+    background-color: var(--amarillo);
+    color: var(--grisOscuro);
 }
 
 .table-custom th{
     background-color: transparent;
-    color: white;
+    color: var(--blanco);
     font-size: 30px;
     border: none;
 }
 
 .alimento2{
-    background-color: #6c6b6b;
-    color: #292929;
+    background-color: var(--grisCalro);
+    color: var(--grisOscuro);
     height: auto;
     text-align: center;
     border-radius: 20px;
@@ -103,7 +108,7 @@ table tr{
 }
 
 button:hover{
-    color: white;
+    color: var(--blanco);
 }
 
 @media (max-width: 50em){
@@ -124,11 +129,45 @@ button:hover{
     table td[data-title]::before{
         content: attr(data-title);
         width: 200px;
-        color: white;
+        color: var(--blanco);
         font-weight: bold;
     }
 
     table th{
         display: none;
+    }
+}
+
+.hoy{
+    padding-left: 20%;
+}
+
+@media(min-width: 400px) { 
+    .hoy{
+        padding-left: 35%;
+    }
+    
+}
+@media(min-width: 500px) { 
+    .hoy{
+        padding-left: 40%;
+    }
+    
+}
+
+@media(min-width: 600px) { 
+    .hoy{
+        padding-left: 42%;
+    }
+}
+
+@media(min-width: 1000px) { 
+    .hoy{
+        padding-left: 44%;
+    }
+}
+@media(min-width: 1100px) { 
+    .hoy{
+        padding-left: 42%;
     }
 }
