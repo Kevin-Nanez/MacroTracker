@@ -1,0 +1,47 @@
+:root{
+    --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --amarillo: #ffa31a;
+    --amarilloHover:#F8C123;
+    --celeste: #0796cf;
+    --grisCalro: #9a9797;
+    --grisOscuro:  #292929;
+    --negro: #1b1b1b;
+    --blanco: #fff;
+}
+
+main{
+    padding: 20px;
+}
+
+.container-2{
+    background-color:var(--grisOscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#imgenlace{
+    padding: 20px;
+    border-radius: 20px;
+    height: 300px;
+    border-radius: 50px;
+    width: 400px;
+    position: relative;
+}
+
+#txtenlace{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: var(--negro);
+}
+
+
+#imgenlace:hover{
+    transform: scale(1.1);
+    transition: all 400ms;
+}
