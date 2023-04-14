@@ -46,10 +46,13 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link primerElemento" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Noticias</a>
+              <a class="nav-link" href="noticias.html">Noticias</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -61,10 +64,10 @@
           <!-- Icon -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Iniciar Sesión</a>
+              <a class="nav-link active" href="diario.html">Iniciar Sesión</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Registrarse</a>
+              <a class="nav-link" href="registro.html">Registrarse</a>
             </li>
           </ul>
         </div>
@@ -98,7 +101,7 @@
 
    <!-- MAIN -->
   <main>
-    <div class="container">
+    <div class="container mt-3 mb-3">
       <div class="row justify-content-center pt-8"></div>
         <div class="formulario"> 
           <form action="">
@@ -107,16 +110,17 @@
             </div>
             <div class="form-group mx-sm-4 pb-3">
               <p>Usuario</p>
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" class="form-control" placeholder="" minlength="1" maxlength="16">
             </div>
             <div class="form-group mx-sm-4 pb-3">
               <p>Contraseña</p>
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" class="form-control" placeholder="" minlength="6" maxlength="20">
+              </div>
               <div class="form-submit-btn pb-5">
                 <input type="text" class="btn btn-block ingresar pb-3" value="Iniciar Sesión">
               </div>
               <div class="form-group text-center">
-                <span><a href="#" class="registrarse">Registrarse</a></span>
+                <span><a href="registro.html" class="registrarse">Registrarse</a></span>
               </div>
             </form>
           </div>
@@ -149,7 +153,7 @@
       <h6>Kevin Josefath Nañez de la Rosa</h6>
       <h6>Jorge Luis Picazo Picazo</h6>
       <h6>Daniel Eduardo Mesias Cortina</h6>
-      <a class="text-white" href="https://www.uanl.mx/">UANL</a>
+      <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>
     </div>
     <!-- Copyright -->
   </footer>

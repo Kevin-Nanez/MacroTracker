@@ -5,13 +5,7 @@
     font-family: sans-serif;
 }
 
-.container{
-    width: 100%;
-    max-width: 650px;
-    padding: 28px;
-    margin: 0 28px;
-    border-radius: 15px;
-}
+
 
 .form-title{
     font-size: 26px;

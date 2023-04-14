@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agregar Alimento</title>
+  <title>Formulario</title>
   <!-- local CSS -->
+  
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/agregaralimento.css">
+  <link rel="stylesheet" href="../css/registro.css">
+
+
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- CDNS -->
   <!-- Font Awesome -->
@@ -21,6 +24,7 @@
 </head>
 
 <body>
+   <!-- HEADER -->
   <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -43,13 +47,10 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link" href="#">Alimentos</a>
+              <a class="nav-link primerElemento" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="agregaralimento.html">Agregar Alimento</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="diario.html">Diario</a>
+              <a class="nav-link" href="#">Noticias</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -59,35 +60,23 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
           <!-- Icon -->
-          <a class="link-secondary me-3" href="#">
-            <i class="fas fa-newspaper"></i>
-              <span class=" badge rounded-pill badge-notification bg-danger">!</span>
-          </a>
-
-          <!-- Notifications -->
-          <div class="dropdown">
-            <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user-edit"></i>
-              </a>
-              <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                </li>
-                </ul>
-          </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Registrarse</a>
+            </li>
+          </ul>
         </div>
         <!-- Right elements -->
       </div>
       <!-- Container wrapper -->
     </nav>
-    <!-- Navbar -->
+    <!-- Navbar --
 
 
-    <!-- Background image -->
+    <!-Background image -->
     <div class="p-5 text-center bg-image banner">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
@@ -108,74 +97,57 @@
       <!-- Background image -->
   </header>
 
+   <!-- MAIN -->
   <main>
-    <!-- Buscador -->
-    <div>
-      <form class="search-container">
-        <button type="submit"><i class="fa fa-search""></i></button>
-        <input class="busqueda" type="text" placeholder="Buscar..." ">
-      </form>
+
+    <div class="container contenedorGrisOsc mt-3 mb-3">
+        <h1 class="form-title">Agregar alimento</h1>
+        <form action="#">
+          <div class="main-user-info">
+            <div class="user-input-box">
+              <label for="food name">Nombre del alimento</label>
+              <input type="text" id="food name" placeholder="">
+            </div>
+            <div class="user-input-box">
+              <label for="kcal">Kcal</label>
+              <input type="number" id="kcal" placeholder="">
+            </div>
+            
+            <div class="user-input-box">
+              <label for="description">Descripción del alimento</label>
+              <input type="tex" id="description" placeholder="">
+            </div>
+            <div class="user-input-box">
+              <label for="protein">Proteínas (g)</label>
+              <input type="number" id="protein" placeholder="">
+            </div>
+            <div class="user-input-box">
+              <label for="content">Contenido</label>
+              <input type="tel" id="content" placeholder="">
+          </div>
+
+          <div class="user-input-box">
+            <label for="fat">Grasas (g)</label>
+            <input type="number" id="fat" placeholder="">
+        </div>
+
+         <!--ESTE NADA MÁS ES DE RELLENO PARA QUE NO SE MUEVA EL ORDEN-->
+        <div class="user-input-box"></div>
+              
+
+          <div class="user-input-box">
+            <label for="carbs">Carbohidratos (g)</label>
+            <input type="number" id="carbs" placeholder="">
+          </div>
+          <div class="form-submit-btn">
+            <input type="submit" value="Enivar">
+          </div>
+        </form>
     </div>
 
-    <!-- Alimentos -->
-    <div class="container-2">
-      <div class="row justify-content-center d-flex align-items-center">
-        <div class="col-sm espacio fs-4">
-          <p class="fw-semibold">Huevo entero</p>
-        </div>
-        <div class="col-sm espacio fs-4">
-          <input type="number">Unidades
-        </div>
-        <div class="col-sm espacio fs-4">
-          <div class="row">
-            <div class="col-sm">
-              <p>P: 40g</p>
-              <p>C: 2g</p>
-            </div>
-            <div class="col-sm">
-              <p>G: 4g</p>
-              <p>200kcal</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm espacio fs-4">
-          <button class="btn btn-custom text-dark">Añadir +</button>
-        </div>
-      </div>
-  </div>
-    
-
-  <div class="container-2">
-    <div class="row justify-content-center d-flex align-items-center">
-      <div class="col-sm espacio fs-4">
-        <p class="fw-semibold">Huevo entero</p>
-      </div>
-      <div class="col-sm espacio fs-4">
-        <input type="number">Unidades
-      </div>
-      <div class="col-sm espacio fs-4">
-        <div class="row">
-          <div class="col-sm">
-            <p>P: 40g</p>
-            <p>C: 2g</p>
-          </div>
-          <div class="col-sm">
-            <p>G: 4g</p>
-            <p>200kcal</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm espacio fs-4">
-        <button class="btn btn-custom text-dark">Añadir +</button>
-      </div>
-    </div>
-</div>
-
-<div class="container text-dark text-center mb-3">
-  <a href="Pages/registro.html" class="btn  amarillo  mt-3">Crear Alimento</a>
-</div>
   </main>
 
+   <!-- FOOTER -->
   <footer class="text-center text-white"">
     <!-- Grid container -->
     <div class="container p-4">
@@ -184,7 +156,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6">
             <div class="ratio ratio-16x9">
-              <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/P8W_SqjMd9M"
+              <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/4Gc4XGnLa4Y"
                 title="YouTube video" allowfullscreen></iframe>
             </div>
           </div>

@@ -1,9 +1,9 @@
-:root{
+:root {
     --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     --amarillo: #ffa31a;
     --celeste: #0796cf;
-    --amarilloHover:#F8C123;
+    --amarilloHover: #F8C123;
     --grisCalro: #9a9797;
     --grisOscuro: #292929;
     --negro: #1b1b1b;
@@ -12,19 +12,20 @@
 
 /* globales  */
 
-body{
-    background: rgb(77,72,72);
-    background: radial-gradient(circle, rgba(77,72,72,1) 21%, rgba(75,75,68,1) 58%, rgba(87,87,87,1) 96%);
+body {
+    background: rgb(77, 72, 72);
+    background: radial-gradient(circle, rgba(77, 72, 72, 1) 21%, rgba(75, 75, 68, 1) 58%, rgba(87, 87, 87, 1) 96%);
 
 }
 
-header i, ul a{
-    color: var(--blanco);   
+header i,
+ul a {
+    color: var(--blanco);
 }
 
 
-footer{
-    background-color:var(--grisOscuro) ;
+footer {
+    background-color: var(--grisOscuro);
 }
 
 
@@ -34,33 +35,34 @@ footer{
 
 
 /* Banner  */
-.h1logo{
+.h1logo {
     font-family: var(--fuenteTitulos);
 }
 
-.h4logo{
+.h4logo {
     font-family: var(--fuenteTitulos);
     font-size: 20px;
-    font-weight:lighter !important;
+    font-weight: lighter !important;
 }
 
-.banner{
-    background-image:url(/Assets/img/banner.png) ;
+.banner {
+    background-image: url(/Assets/img/banner.png);
     height: 200px;
 
 }
-.banner img{
+
+.banner img {
     height: 75px;
 }
 
-@media(min-width: 480px) and (max-width: 767px) { 
-    .banner img{
+@media(min-width: 480px) and (max-width: 767px) {
+    .banner img {
         height: 100px;
     }
 }
 
-@media(min-width: 768px) { 
-    .banner img{
+@media(min-width: 768px) {
+    .banner img {
         height: 120px;
     }
 }
@@ -68,27 +70,34 @@ footer{
 /* utilidades */
 .text-justify {
     text-align: justify !important;
-  }
+}
 
-  .contenedorGrisOsc{
+.contenedorGrisOsc {
     background-color: var(--grisOscuro);
     border-radius: 1rem;
-  }
-  .fw-700{
-    font-weight: 700!important;
-  }
+}
 
-  .amarillo{
-    background-color: var(--amarillo)!important;
-    
-  }
+.fw-700 {
+    font-weight: 700 !important;
+}
 
-  .brodenegro1{
-    border:  1px solid var(--negro) !important;
-  }
+.amarillo {
+    background-color: var(--amarillo) !important;
 
-  .brodenegro2{
-    border:  2px solid var(--negro) !important;
-  }
+}
 
+.grisclaro {
+    background-color: var(--grisCalro) !important;
+}
 
+.grisosc {
+    background-color: var(--grisOscuro) !important;
+}
+
+.brodenegro1 {
+    border: 1px solid var(--negro) !important;
+}
+
+.brodenegro2 {
+    border: 2px solid var(--negro) !important;
+}
