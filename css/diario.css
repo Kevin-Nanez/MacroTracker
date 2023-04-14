@@ -81,10 +81,6 @@
     color: var(--grisOscuro);
 }
 
-#aalimento{
-    background-color: var(--amarillo);
-    color: var(--grisOscuro);
-}
 
 .table-custom th{
     background-color: transparent;

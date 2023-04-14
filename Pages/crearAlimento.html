@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario</title>
   <!-- local CSS -->
-  
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/registro.css">
 
@@ -26,57 +26,72 @@
 <body>
    <!-- HEADER -->
   <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <!-- Container wrapper -->
-      <div class="container-fluid">
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Navbar brand -->
-          <a class="navbar-brand mt-sm-0 mb-auto" href="#">
-            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo"
-              loading="lazy" />
-          </a>
-          <!-- Left links -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
-            <li class="nav-item">
-              <a class="nav-link primerElemento" href="#">Alimentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Noticias</a>
-            </li>
-          </ul>
-          <!-- Left links -->
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+  
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-sm-0 mb-auto" href="#">
+              <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo"
+                loading="lazy" />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Alimentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="crearAlimento.html">Crear Alimento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="diario.html">Diario</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+  
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+            <!-- Icon -->
+            <a class="link-secondary me-3" href="noticias.html">
+              <i class="fas fa-newspaper"></i>
+              <span class=" badge rounded-pill badge-notification bg-danger">!</span>
+            </a>
+  
+            <!-- Notifications -->
+            <div class="dropdown">
+              <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-edit"></i>
+              </a>
+              <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" href="#">Mi Perfil</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Right elements -->
         </div>
-        <!-- Collapsible wrapper -->
-
-        <!-- Right elements -->
-        <div class="d-flex align-items-center">
-          <!-- Icon -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Iniciar Sesión</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Registrarse</a>
-            </li>
-          </ul>
-        </div>
-        <!-- Right elements -->
-      </div>
-      <!-- Container wrapper -->
-    </nav>
-    <!-- Navbar --
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
 
 
-    <!-Background image -->
+   
     <div class="p-5 text-center bg-image banner">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
@@ -101,25 +116,25 @@
   <main>
 
     <div class="container contenedorGrisOsc mt-3 mb-3">
-        <h1 class="form-title">Agregar alimento</h1>
+        <h1 class="form-title pt-3">Crear Alimento</h1>
         <form action="#">
           <div class="main-user-info">
             <div class="user-input-box">
               <label for="food name">Nombre del alimento</label>
-              <input type="text" id="food name" placeholder="">
+              <input type="text" id="food name" placeholder="" minlength="3" maxlength="35">
             </div>
             <div class="user-input-box">
               <label for="kcal">Kcal</label>
-              <input type="number" id="kcal" placeholder="">
+              <input type="number" id="kcal" placeholder="" min="0">
             </div>
             
             <div class="user-input-box">
               <label for="description">Descripción del alimento</label>
-              <input type="tex" id="description" placeholder="">
+              <input type="tex" id="description" placeholder="" minlength="1" maxlength="125">
             </div>
             <div class="user-input-box">
               <label for="protein">Proteínas (g)</label>
-              <input type="number" id="protein" placeholder="">
+              <input type="number" id="protein" placeholder="" min="0">
             </div>
             <div class="user-input-box">
               <label for="content">Contenido</label>
@@ -128,7 +143,7 @@
 
           <div class="user-input-box">
             <label for="fat">Grasas (g)</label>
-            <input type="number" id="fat" placeholder="">
+            <input type="number" id="fat" placeholder="" min="0">
         </div>
 
          <!--ESTE NADA MÁS ES DE RELLENO PARA QUE NO SE MUEVA EL ORDEN-->
@@ -137,10 +152,10 @@
 
           <div class="user-input-box">
             <label for="carbs">Carbohidratos (g)</label>
-            <input type="number" id="carbs" placeholder="">
+            <input type="number" id="carbs" placeholder="" min="0">
           </div>
           <div class="form-submit-btn">
-            <input type="submit" value="Enivar">
+            <input type="submit" value="Enivar" class="enviarAlimento">
           </div>
         </form>
     </div>

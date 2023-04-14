@@ -10,9 +10,8 @@
   
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/registro.css">
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
 
-
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- CDNS -->
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -68,7 +67,7 @@
               <a class="nav-link" href="login.html">Iniciar Sesión</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Registrarse</a>
+              <a class="nav-link active" href="registro.html">Registrarse</a>
             </li>
           </ul>
         </div>
@@ -124,8 +123,8 @@
               <input type="number" id="height" placeholder="" min="1" max="270">
             </div>
             <div class="user-input-box">
-              <label for="password">Confirmar contraseña</label>
-              <input type="password" id="password" placeholder="" minlength="6" maxlength="20">
+              <label for="repeatpassword">Confirmar contraseña</label>
+              <input type="password" id="repeatpassword" placeholder="" minlength="6" maxlength="20">
             </div>
             <div class="user-input-box">
               <label for="weight">Peso (kg)</label>
@@ -148,9 +147,10 @@
             <input type="number" id="aFDays" placeholder="" min="0" max="7">
           </div>
 
-          <div class="form-submit-btn">
-            <input type="submit" value="Registrarse">
+          <div class="form-submit-btn ">
+            <input  type="submit" class="btn btn-block ingresar pb-3 redirigirLogin" value="Registrarse">
           </div>
+
         </form>
     </div>
   </main>
@@ -188,6 +188,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+
 <script src="../js/script.js"></script>
 
 </body>
