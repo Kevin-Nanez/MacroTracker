@@ -8,8 +8,8 @@
   <title>Diario</title>
   <!-- local CSS -->
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/diario.css">
-  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/unido.css">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- CDNS -->
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -46,10 +46,10 @@
               <a class="nav-link" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="crearAlimento.html">Crear Alimento</a>
+              <a class="nav-link" href="agregaralimento.html">Agregar Alimento</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="diario.html">Diario</a>
+              <a class="nav-link" href="diario.html">Diario</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -109,15 +109,14 @@
   </header>
 
   <main>
-    <div class="container-2">
+    <div>
       <div class="d-flex h-500">
         <div class="d-flex align-items-center justify-content-center justify-content-between ms-5 me-5 menudiario">
           <div class="row hoy">
 
               <div class="d-flex flex-nowrap flex-sm-row">
                 <div class="col-sm">
-                  <button class="flecha me-sm-0 me-md-3 me-xl-5">
-                    < </button>
+                  <button class="flecha me-sm-0 me-md-3 me-xl-5"><</button>
                 </div>
                 <div class="col-sm">
                   <div class="text-center text-md-start">Hoy</div>
@@ -137,30 +136,30 @@
     </div>
 
 
-    <div class="container-3">
+    <div class="container-calorias">
       <div class="row">
-        <div class="col-sm espacio fs-4">
+        <div class="col-sm espaciodiario fs-4">
           <p>Objetivo</p>
           <p>2400</p>
         </div>
-        <div class="col-1 espacio fs-4">
+        <div class="col-1 espaciodiario fs-4">
           <p>-</p>
         </div>
-        <div class="col-sm espacio fs-4">
+        <div class="col-sm espaciodiario fs-4">
           <p>Alimentos</p>
           <p>800</p>
         </div>
-        <div class="col-1 espacio fs-4">
+        <div class="col-1 espaciodiario fs-4">
           <p>=</p>
         </div>
-        <div class="col-sm espacio fs-4">
+        <div class="col-sm espaciodiario fs-4">
           <p>Restantes</p>
           <p>1600</p>
         </div>
       </div>
     </div>
     <!-- Tabla -->
-    <div class="container-4">
+    <div class="container-adiario">
       <div class="table-responsive">
         <table class="table border-0 table-custom">
           <thead class="thead-dark">
@@ -172,7 +171,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="alimento2">
+            <tr class="rgtrotabla">
               <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
               <td data-title="Cantidad:" class="align-middle">100g</td>
               <td data-title="Información:" class="align-middle">
@@ -202,7 +201,7 @@
                 </div>
               </td>
             </tr>
-            <tr class="alimento2">
+            <tr class="rgtrotabla">
               <td data-title="Alimento:" class="align-middle">Pechuga de pollo</td>
               <td data-title="Cantidad:" class="align-middle">100g</td>
               <td data-title="Información:" class="align-middle">
@@ -235,20 +234,20 @@
           </tbody>
         </table>
       </div>
-      <div class="row ">
+      <div class="row">
         <div class="col-sm">
-          <button class="btn mt-4 fs-5 amarillo text-dark redirigirAgregar" >
-            Agregar Alimento
+          <button class="btn btn-custom text-dark mt-4 fs-5" id="botonamar">
+            Añadir Alimento
           </button>
         </div>
         <div class="col-sm">
-          <button class="btn mt-4 fs-5 amarillo text-dark redirigirCrearar">
+          <button class="btn btn-custom text-dark mt-4 fs-5" id="botonamar">
             Crear Alimento
           </button>
         </div>
       </div>
     </div>
-  
+
   </main>
 
   <footer class="text-center text-white"">
@@ -274,13 +273,12 @@
       <h6>Kevin Josefath Nañez de la Rosa</h6>
       <h6>Jorge Luis Picazo Picazo</h6>
       <h6>Daniel Eduardo Mesias Cortina</h6>
-      <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>
+      <a class="text-white" href="https://www.uanl.mx/">UANL</a>
     </div>
     <!-- Copyright -->
   </footer>
 
   <!-- CDNS -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
   <script src="../js/script.js"></script>
