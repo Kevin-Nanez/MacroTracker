@@ -10,9 +10,7 @@
     --blanco: #fff;
 }
 
-main{
-    padding: 20px;
-}
+
 
 .container-2{
     background-color:var(--grisOscuro);

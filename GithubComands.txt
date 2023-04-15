@@ -12,6 +12,22 @@ git push origin beta                // pushear a rama beta
 
 git pull origin beta  // obtener cambios de otros colaboradores
 
+
+
+reestablecer el repositorio a un commit pasado:
+git checkout hash del commit
+
+$ git branch alfa
+
+$ git chechout alfa
+
+$ git commit -m "restablecido a commit hash del commit"
+
+git push --force  origin alfa:beta
+
+
+
+
 Notas:
 Vamos a trabajar en la rama beta, o igual puedes crear una por separado, luego ya las mergeamos y vamos actualizando el main
 
