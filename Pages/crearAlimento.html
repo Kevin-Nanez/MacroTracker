@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario</title>
+  <title>Crear Alimento</title>
   <!-- local CSS -->
   <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/layout.css">
@@ -50,10 +50,10 @@
                 <a class="nav-link" href="#">Alimentos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="crearAlimento.html">Crear Alimento</a>
+                <a class="nav-link active" href="crearAlimento.html">Crear Alimento</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="diario.html">Diario</a>
+                <a class="nav-link" href="diario.html">Diario</a>
               </li>
             </ul>
             <!-- Left links -->
@@ -76,10 +76,10 @@
               </a>
               <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
+                  <a class="dropdown-item" href="ajustesPerfil.html">Mi Perfil</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                  <a class="dropdown-item" href="../index.html">Cerrar Sesion</a>
                 </li>
               </ul>
             </div>
@@ -117,7 +117,7 @@
 
     <div class="container contenedorGrisOsc mt-3 mb-3">
         <h1 class="form-title pt-3">Crear Alimento</h1>
-        <form action="#">
+        <form action="#" class="p-3">
           <div class="main-user-info">
             <div class="user-input-box">
               <label for="food name">Nombre del alimento</label>
@@ -134,11 +134,16 @@
             </div>
             <div class="user-input-box">
               <label for="protein">Proteínas (g)</label>
-              <input type="number" id="protein" placeholder="" min="0">
+              <input  type="number" id="protein" placeholder="" min="0">
             </div>
             <div class="user-input-box">
               <label for="content">Contenido</label>
-              <input type="tel" id="content" placeholder="">
+              <select class="form-select me-4 me-xl-4" id="content">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="100 g">100 g</option>
+                <option value="100 ml">100 ml</option>
+                <option value="1 unidad">1 unidad</option>
+              </select>
           </div>
 
           <div class="user-input-box">
@@ -154,7 +159,7 @@
             <label for="carbs">Carbohidratos (g)</label>
             <input type="number" id="carbs" placeholder="" min="0">
           </div>
-          <div class="form-submit-btn">
+          <div class="form-submit-btn pe-4 pe-sm-0"">
             <input type="submit" value="Enivar" class="enviarAlimento">
           </div>
         </form>

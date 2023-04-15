@@ -101,3 +101,7 @@ footer {
 .brodenegro2 {
     border: 2px solid var(--negro) !important;
 }
+
+.cursor-pointer{
+   cursor: pointer; 
+}

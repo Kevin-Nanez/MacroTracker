@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
     $(".redirigirAgregar").on("click", function () {
         event.preventDefault();
-        window.location.href= "../Pages/agregarAlimento.html";
+        window.location.href= "../Pages/agregaraAlimento.html";
     });
 
     $(".redirigirCrearar").on("click", function () {
@@ -21,6 +21,14 @@ $(document).ready(function () {
         window.location.href= "../Pages/crearAlimento.html";
     });
 
+    $(".info_alimento").on("click", function () {
+      event.preventDefault();
+
+      window.location.href= "../Pages/infoalimento.html";
+  });
+
+
+    
 
     //enviar info crear alimento
     $('form').submit(function(event) {
