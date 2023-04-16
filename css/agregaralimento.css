@@ -1,0 +1,112 @@
+:root{
+    --fuenteTitulos: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --fuenteParrafo: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --amarillo: #ffa31a;
+    --amarilloHover:#F8C123;
+    --celeste: #0796cf;
+    --grisCalro: #9a9797;
+    --grisOscuro:  #292929;
+    --negro: #1b1b1b;
+    --blanco: #fff;
+}
+
+
+.search-container {
+    margin: auto; 
+    width: 80%; 
+    display: flex; 
+    background-color: var(--amarillo); 
+    border-radius: 5px; 
+    margin-top: 20px;
+  }
+  
+.search-container input[type="text"] {
+    flex: 1;
+    border: none; 
+    background-color: var(--amarillo); 
+    color: var(--negro); 
+    padding: 10px; 
+    font-size: 16px; 
+    padding-right: 20px;
+    border-radius: 5px; 
+    
+    color: var(--negro);
+}
+
+.search-container button[type="submit"] {
+    padding: 10px; 
+    background-color: var(--amarillo); 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px;
+    color: var(--negro);
+}
+
+.search-container button{
+    padding: 10px; 
+    background-color: var(--amarillo); 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    color: var(--negro);
+}
+
+.search-container button:hover {
+    background-color: var(--amarilloHover); 
+}
+
+.search-container input[type="text"]::placeholder {
+    color: var(--negro);
+}
+
+.container-2 {
+    background-color: var(--grisCalro);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+.espacio {
+    color: var(--negro);
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.espacio input[type="number"]{
+    background-color: var(--negro);
+    border: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 10px;
+    width: 90px;
+    color: white;
+}
+
+.btn.btn-custom{
+    background-color:var(--amarillo);
+    font-size: 1em;
+}
+
+.btn.btn-custom:hover{
+    background-color: var(--amarilloHover); 
+}
+
+.btn.btn-custom:active{
+    background-color: var(--amarilloHover); 
+}
+@media(max-width: 320px) { 
+
+}  
+
+@media screen and (max-width: 600px) {
+    .search-container {
+      width: 80%;
+    }
+  
+    .search-container input[type="text"] {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
