@@ -105,3 +105,7 @@ footer {
 .cursor-pointer{
    cursor: pointer !important; 
 }
+
+.modal-dialog{
+    pointer-events: all !important;
+}

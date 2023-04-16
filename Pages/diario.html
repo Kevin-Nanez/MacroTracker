@@ -130,13 +130,85 @@
 
 
           </div>
-          <div class="icono-calendario me-4 cursor-pointer" id="abrirCalendario" data-toggle="modal"
-            data-target="#calendarioModal">
+
+          <div class="icono-calendario me-4 cursor-pointer" id="openModal">
+
             <i class="fa-solid fa-calendar"></i>
+
+          </div>
+          <!-- modal  -->
+
+          <div id="modal" class="modal" id="modalCalendario">
+            <div class=" modal-dialog modal-dialog-centered " role="document">
+              <div class="container contenedorGrisOsc">
+                <!-- header del modal  -->
+                <div class="modal-header  text-white ">
+                  <a  class="cerrarModal cursor-pointer bg-light btn btn-secondary btn-icon-only position-relative top-0 start-0 mt-3 ms-3 preventD"
+                    aria-label="Close">
+                    <i class="fas fa-arrow-left"></i>
+                  </a>
+                  <div class="container pt-4 text-center">
+                    <h5 id="calendarioModalLabel ">Seleccione una fecha</h5>
+                  </div>
+                </div>
+
+                <div class="modal-body ">
+                  <!-- aqui va el selector de fecha  -->
+                  <div class="row">
+                    <div class="col">
+                      <select id="selectMes" class="form-select" aria-label="Seleccione un mes">
+                        <option value="" disabled selected>Mes</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <select id="selectAnio" class="form-select" aria-label="Seleccione un año">
+                        <option value="" disabled selected>Año</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                      </select>
+                    </div>
+
+                    <div class="col">
+                      <select id="selectDia" class="form-select" aria-label="Seleccione un día">
+                        <option value="" disabled selected>Día</option>
+                        <!-- Options for days will be generated dynamically using JavaScript -->
+                      </select>
+                    </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 mt-4 mb-4">
+                      <button id="buscarFecha" type="button"
+                        class="btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5">Ir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+   
 
 
     <div class="container-3">
@@ -253,81 +325,7 @@
       </div>
     </div>
 
-  
-    <div class="modal " id="calendarioModal" tabindex="-1" role="dialog" aria-labelledby="calendarioModalLabel"
-      aria-hidden="true" data-backdrop="false">
 
-
-      <div class=" modal-dialog modal-dialog-centered " role="document">
-        <div class=" container contenedorGrisOsc">
-          <!-- header del modal  -->
-          <div class="modal-header  text-white ">
-            <a
-              class=" bg-light btn btn-secondary btn-icon-only position-relative top-0 start-0 mt-3 ms-3 preventD"
-               aria-label="Close" >
-              <i class="fas fa-arrow-left"></i>
-            </a>
-
-            <div class="container pt-4 text-center">
-              <h5 id="calendarioModalLabel ">Seleccione una fecha</h5>
-            </div>
-          </div>
-          <div class="modal-body ">
-            <!-- aqui va el selector de fecha  -->
-            <div class="row">
-              <div class="col">
-                <select id="selectMes" class="form-select" aria-label="Seleccione un mes">
-                  <option value="" disabled selected>Seleccione un mes</option>
-                  <option value="01">Enero</option>
-                  <option value="02">Febrero</option>
-                  <option value="03">Marzo</option>
-                  <option value="04">Abril</option>
-                  <option value="05">Mayo</option>
-                  <option value="06">Junio</option>
-                  <option value="07">Julio</option>
-                  <option value="08">Agosto</option>
-                  <option value="09">Septiembre</option>
-                  <option value="10">Octubre</option>
-                  <option value="11">Noviembre</option>
-                  <option value="12">Diciembre</option>
-                </select>
-              </div>
-              <div class="col">
-                <select id="selectDia" class="form-select" aria-label="Seleccione un día">
-                  <option value="" disabled selected>Seleccione un día</option>
-                  <!-- Options for days will be generated dynamically using JavaScript -->
-                </select>
-              </div>
-              <div class="col">
-                <select id="selectAnio" class="form-select" aria-label="Seleccione un año">
-                  <option value="" disabled selected>Seleccione un año</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
-                  <option value="2029">2029</option>
-                  <option value="2030">2030</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 mt-4 mb-4">
-                <button id="" type="button" class=" btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5">Ir</button>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-
-      </div>
-
-
-    </div>
 
 
   </main>
