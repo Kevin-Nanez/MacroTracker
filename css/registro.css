@@ -88,9 +88,7 @@
 }
 
 @media(max-width: 600px){
-    .container{
-        min-width: 280px;
-    }
+
 
     .user-input-box{
         margin-bottom: 12px;
