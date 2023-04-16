@@ -1,12 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.user-input-box:nth-child(2n){
-    justify-content: end;
-}
-
 
 .user-input-box label{  
     width: 95%;
@@ -20,13 +11,6 @@
     border: 1px solid grey;
     padding: 0 10px;
 }
-.gender-category label,
-.gender-category input,
-.form-submit-btn input{
-    cursor: pointer;
-}
-.form-submit-btn{
-    width: 100%;
-}
+
 
 
