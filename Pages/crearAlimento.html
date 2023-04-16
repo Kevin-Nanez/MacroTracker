@@ -116,28 +116,32 @@
   <main>
 
     <div class="container contenedorGrisOsc mt-3 mb-3">
-        <h1 class="form-title pt-3">Crear Alimento</h1>
+        <h1 class="text-light text-center fs-4 fw-bolder mt-3">Crear Alimento</h1>
         <form action="#" class="p-3" id="formularioCrearAlimento">
-          <div class="main-user-info">
-            <div class="user-input-box">
-              <label for="food name">Nombre del alimento</label>
+
+          <div class="main-food-info d-flex flex-wrap justify-content-between p-2">
+            <div class="user-input-box d-flex flex-wrap w-50">
+              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Nombre del alimento</label>
               <input type="text" id="food name" placeholder="" minlength="3" maxlength="35">
             </div>
-            <div class="user-input-box">
-              <label for="kcal">Kcal</label>
+
+            <div class="user-input-box d-flex flex-wrap w-50">
+              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Kcal</label>
               <input type="number" id="kcal" placeholder="" min="0">
             </div>
             
-            <div class="user-input-box">
-              <label for="description">Descripción del alimento</label>
+            <div class="user-input-box d-flex flex-wrap w-50">
+              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Descripción del alimento</label>
               <input type="tex" id="description" placeholder="" minlength="1" maxlength="125">
             </div>
-            <div class="user-input-box">
-              <label for="protein">Proteínas (g)</label>
+
+            <div class="user-input-box d-flex flex-wrap w-50">
+              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Proteínas (g)</label>
               <input  type="number" id="protein" placeholder="" min="0">
             </div>
-            <div class="user-input-box">
-              <label for="content">Contenido</label>
+
+            <div class="user-input-box d-flex flex-wrap w-50">
+              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contenido</label>
               <select class="form-select me-4 me-xl-4" id="content">
                 <option value="" disabled selected>Selecciona una opción</option>
                 <option value="100 g">100 g</option>
@@ -146,8 +150,8 @@
               </select>
           </div>
 
-          <div class="user-input-box">
-            <label for="fat">Grasas (g)</label>
+          <div class="user-input-box d-flex flex-wrap w-50">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Grasas (g)</label>
             <input type="number" id="fat" placeholder="" min="0">
         </div>
 
@@ -155,12 +159,13 @@
         <div class="user-input-box"></div>
               
 
-          <div class="user-input-box">
-            <label for="carbs">Carbohidratos (g)</label>
+          <div class="user-input-box d-flex flex-wrap w-50">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Carbohidratos (g)</label>
             <input type="number" id="carbs" placeholder="" min="0">
           </div>
+
           <div class="form-submit-btn pe-4 pe-sm-0"">
-            <input type="submit" value="Enivar" class="enviarAlimento">
+            <input type="submit" value="Enivar" class="btn-block amarillo w-100 mb-2 mt-3 fs-5 text-dark enviarAlimento">
           </div>
         </form>
     </div>

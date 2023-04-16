@@ -1,21 +1,9 @@
-
-
 .formulario{
-    background: rgba(0, 0, 0, 0.5);
+    background:  rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 15px;
-
 }
 
-p{
-    font-size:x-large;
-    font:bold;
-    color:rgb(211, 211, 203);
-}
-.container input{
-    color: #fff;
-}
-.registrarse{
-    text-decoration:underline;
+.text-decoration-underline{
     color: #706e6e;
 }
