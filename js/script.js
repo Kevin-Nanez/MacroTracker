@@ -33,6 +33,11 @@ $(document).ready(function () {
     window.location.href = "../Pages/infoalimento.html";
   });
 
+  $(".preventD").on("click", function(){
+    event.preventDefault();
+
+  })
+
 
 
 

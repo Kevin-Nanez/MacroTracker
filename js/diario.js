@@ -1,16 +1,23 @@
-/*
+
 $(document).ready(function () {
 
-    $('.datepicker').datepicker({
-        format: 'dd/mm/yyyy',
-        language: 'es'
+    $('#abrirCalendario').on('click', function (event) {
+        event.preventDefault();
+        $('#calendarioModal').modal('show');   
+        
     });
 
-    // Cierra el modal al seleccionar una fecha
-    $('.datepicker').on('changeDate', function () {
-        $('#calendarioModal').modal('hide');
+    $('#cerrarCalendario').on('click', function (event) {
+        event.preventDefault();
+        $('#calendarioModal').modal('hide');   
     });
 
+    $('#calendarioModal').on('click', function(event) {
+        event.stopPropagation();
+      });
 
 });
-*/
+
+
+
+
