@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
   <!-- local CSS -->
-  
+
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/registro.css">
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
 
   <!-- CDNS -->
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-   <!-- HEADER -->
+  <!-- HEADER -->
   <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -99,85 +99,97 @@
       <!-- Background image -->
   </header>
 
-   <!-- MAIN -->
+  <!-- MAIN -->
   <main>
 
     <div class="container contenedorGrisOsc mb-3">
-        <p class="text-light text-center fs-4 fw-bolder mt-3">Registro</p>
-        <form class="p-1" action="#">
-          <div class="main-user-info d-flex flex-wrap justify-content-between p-2">
+      <p class="text-light text-center fs-4 fw-bolder mt-3 pt-3 ">Registro</p>
+      <form class="p-1" action="#">
+        <div class="main-user-info d-flex flex-wrap justify-content-between p-2">
 
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Nombre de usuario</label>
+          <div class="user-input-box d-flex flex-wrap w-50">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Nombre</label>
+            <div class="container ps-0">
               <input type="text" id="username" placeholder="" minlength="1" maxlength="16">
-            </div>
-
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Edad</label>
-              <input type="number" id="age" placeholder="" min="1" max="100">
-            </div>
-
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contraseña</label>
-              <input type="password" id="password" placeholder="" minlength="6" maxlength="20">
-            </div>
-
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Altura (cm)</label>
-              <input type="number" id="height" placeholder="" min="1" max="230">
-            </div>
-
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Confirmar contraseña</label>
-              <input type="password" id="repeatpassword" placeholder="" minlength="6" maxlength="20">
-            </div>
-
-            <div class="user-input-box d-flex flex-wrap w-50">
-              <label class="text-light fs-5 fw-bolder mb-2 mt-2">Peso (kg)</label>
-              <input type="number" id="weight" placeholder="" min="1" max="800" step="0.01">
-          </div>
-
-              
-          <div class="gender-details-box mb-2 mt-2">
-            <span class="text-light fs-5 fw-bolder mb-2 mt-2">Sexo:</span>
-            <div class="gender-category mb-1 mt-1">
-              <input type="radio" id="male" name="gender" class="cursor-pointer">
-              <label class="cursor-pointer text-light fs-6 p-1">Masculino</label>
-              <input type="radio" id="female" class="cursor-pointer" name="gender">
-              <label class="cursor-pointer text-light fs-6 p-1">Femenino</label>
             </div>
           </div>
 
           <div class="user-input-box d-flex flex-wrap w-50">
+            <div class="container ps-2 pe-0">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Edad</label>
+            <input type="number" id="age" placeholder="" min="1" max="100">
+          </div>
+          </div>
+
+          <div class="user-input-box d-flex flex-wrap w-50">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contraseña</label>
+            <div class="container ps-0">
+              <input type="password" id="password" placeholder="" minlength="6" maxlength="20">
+            </div>
+          </div>
+
+          <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
+
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Altura (cm)</label>
+            <input type="number" id="height" placeholder="" min="1" max="230">
+          </div>
+
+          <div class="user-input-box d-flex flex-wrap w-50">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Confirmar contraseña</label>
+            <div class="container ps-0">
+              <input type="password" id="repeatpassword" placeholder="" minlength="6" maxlength="20">
+            </div>
+          </div>
+
+          <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
+            <label class="text-light fs-5 fw-bolder mb-2 mt-2">Peso (kg)</label>
+            <input type="number" id="weight" placeholder="" min="1" max="800" step="0.01">
+          </div>
+
+
+          <div class="gender-details-box mb-2 mt-2">
+            <span class="text-light fs-5 fw-bolder mb-2 mt-2">Sexo:</span>
+            <div class="gender-category mb-1 mt-1">
+              <input type="radio" id="male" name="gender" class="cursor-pointer">
+              <label for="male" class="cursor-pointer text-light fs-6 p-1">Masculino</label>
+              <input type="radio" id="female" class="cursor-pointer" name="gender">
+              <label for="female" class="cursor-pointer text-light fs-6 p-1">Femenino</label>
+            </div>
+          </div>
+
+          <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
             <label class="text-light fs-5 fw-bolder mb-2 mt-2">Días de actividad física</label>
             <input type="number" id="aFDays" placeholder="" min="0" max="7">
           </div>
 
           <div class="form-submit-btn btn-block text-center ">
-              <button type="submit" class=" mt-3 mb-4 btn fs-5 text-dark btn-block amarillo p-3 redirigirLogin">Registrarse</button>
+            <button type="submit"
+              class=" mt-3 mb-4 btn fs-5 text-dark btn-block amarillo p-3 redirigirLogin">Registrarse</button>
           </div>
-
-        </form>
+      </form>
     </div>
   </main>
 
-   <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="text-center text-white"">
     <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Iframe -->
-      <section class="">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6">
-            <div class="ratio ratio-16x9 player">
-                <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/4OQDKf3Sqfs" title="Alimentos BARATOS para PERDER GRASA 🔥" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>     
-            <div>
-            </div>
+    <div class=" container p-4">
+    <!-- Section: Iframe -->
+    <section class="">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 player">
+            <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/4OQDKf3Sqfs"
+              title="Alimentos BARATOS para PERDER GRASA 🔥" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div>
           </div>
         </div>
-      </section>
-      <!-- Section: Iframe -->
+      </div>
+    </section>
+    <!-- Section: Iframe -->
     </div>
     <!-- Grid container -->
 
@@ -192,11 +204,12 @@
   </footer>
 
   <!-- CDNS -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 
-<script src="../js/script.js"></script>
+  <script src="../js/script.js"></script>
 
 </body>
 

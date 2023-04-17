@@ -81,3 +81,132 @@
 
 
 
+
+
+/* Agregar Alimento */
+
+.search-container {
+    margin: auto; 
+    width: 80%; 
+    display: flex; 
+    background-color: var(--amarillo); 
+    border-radius: 5px; 
+    margin-top: 20px;
+  }
+  
+.search-container input[type="text"] {
+    flex: 1;
+    border: none; 
+    background-color: var(--amarillo); 
+    color: var(--negro); 
+    padding: 10px; 
+    font-size: 16px; 
+    padding-right: 20px;
+    border-radius: 5px; 
+    
+    color: var(--negro);
+}
+
+.search-container button[type="submit"] {
+    padding: 10px; 
+    background-color: var(--amarillo); 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px;
+    color: var(--negro);
+}
+
+.search-container button{
+    padding: 10px; 
+    background-color: var(--amarillo); 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    color: var(--negro);
+}
+
+.search-container button:hover {
+    background-color: var(--amarilloHover); 
+}
+
+.search-container input[type="text"]::placeholder {
+    color: var(--negro);
+}
+
+.container-2 {
+    background-color: var(--grisCalro);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+.espacio {
+    color: var(--negro);
+    height: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.espacio input[type="number"]{
+    background-color: var(--negro);
+    border: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 10px;
+    width: 90px;
+    color: white;
+}
+
+.btn.btn-custom{
+    background-color:var(--amarillo);
+    font-size: 1em;
+}
+
+.btn.btn-custom:hover{
+    background-color: var(--amarilloHover); 
+}
+
+.btn.btn-custom:active{
+    background-color: var(--amarilloHover); 
+}
+
+@media screen and (max-width: 600px) {
+    .search-container {
+      width: 80%;
+    }
+  
+    .search-container input[type="text"] {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+
+
+/* registro */
+
+.user-input-box label{  
+    width: 95%;
+}
+
+.user-input-box input{
+    height: 40px;
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+}
+
+
+/* login */
+
+.text-decoration-underline{
+    color: var(--grisCalro);
+}
+
+.text-decoration-underline:hover{
+    color: var(--amarillo);
+}
+
+
