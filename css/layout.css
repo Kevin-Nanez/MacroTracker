@@ -46,10 +46,12 @@ footer {
 }
 
 .banner {
-    background-image: url(/Assets/img/banner.png);
+    background-image: url(../Assets/img/banner.png);
     height: 200px;
 
 }
+
+
 
 .banner img {
     height: 75px;
