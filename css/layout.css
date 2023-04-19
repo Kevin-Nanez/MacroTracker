@@ -74,6 +74,22 @@ footer {
     text-align: justify !important;
 }
 
+@media(max-width: 400px) { 
+    .width-20{
+        min-width: 100% !important; 
+    }
+}
+
+.width-20{
+    min-width: 15rem; 
+}
+
+
+
+
+
+    
+
 .contenedorGrisOsc {
     background-color: var(--grisOscuro);
     border-radius: 1rem;
