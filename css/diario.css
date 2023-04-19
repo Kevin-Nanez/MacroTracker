@@ -98,7 +98,23 @@ button:hover{
 
     table td[data-title]{
         display: flex;
+        flex-wrap: wrap;
     }
+
+/* agregado por kevin, lo hace mas responsive, cambiar table */
+    @media(max-width: 650px) {  
+         table td[data-title]{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .alimento2 td {
+        width: 100%;
+        display: table-column !important;
+    }
+
+    }
+   
 
     table td[data-title]::before{
         content: attr(data-title);
