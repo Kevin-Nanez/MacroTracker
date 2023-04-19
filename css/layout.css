@@ -45,8 +45,14 @@ footer {
     font-weight: lighter !important;
 }
 
-.banner {
+.banner_index {
     background-image: url(/Assets/img/banner.png);
+    height: 200px;
+
+}
+
+.banner {
+    background-image: url(../Assets/img/banner.png);
     height: 200px;
 
 }
