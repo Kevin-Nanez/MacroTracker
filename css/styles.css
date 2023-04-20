@@ -77,9 +77,159 @@
 }
 
 
-/* diario */
+/* Diario */
+
+.menudiario{
+    width: 1400px;
+    height: 80px;
+    background-color: var(--amarillo);
+    color: var(--negro);
+    font-size: 36px;
+}
+
+.flecha{
+    border: none;
+    background-color: transparent;
+    color: var(--grisOscuro);
+}
+
+.flecha:hover{
+    background-color: rgba(128, 128, 128, 0.248);
+}
+
+.container-cals {
+    background-color:var(--grisOscuro);
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.elemdiario {
+    background-color: var(--grisOscuro);;
+    color: var(--blanco);
+}
+
+.container-diario {
+    background-color: var(--grisOscuro);
+    border-radius: 20px;
+    color: var(--blanco);
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+}
 
 
+
+.table-diario th{
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 30px;
+    border: none;
+}
+
+.registrodiario{
+    background-color: var(--grisCalro);
+    color: var(--grisOscuro);
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+
+button:hover{
+    color: var(--blanco);
+}
+
+@media (max-width: 800px){
+    .table-diario{
+        width: 100%;
+    }
+
+    .table-diario tr{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .table-diario td[data-title]{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+/* agregado por kevin, lo hace mas responsive, cambiar table */
+
+@media(max-width: 650px) {  
+    .table-diario td[data-title]{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.registrodiario td {
+    width: 100%;
+    display: table-column !important;
+}
+
+}
+
+
+.table-diario td[data-title]::before{
+    content: attr(data-title);
+    width: 200px;
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.table-diario th{
+    display: none;
+}
+}
+
+.hoy{
+    padding-left: 20%;
+}
+
+@media(min-width: 100px) { 
+    .hoy{
+        padding-left: 22%;
+    }
+    
+}
+
+@media(min-width: 400px) { 
+    .hoy{
+        padding-left: 32%;
+    }
+    
+}
+@media(min-width: 500px) { 
+    .hoy{
+        padding-left: 37%;
+    }
+    
+}
+
+@media(min-width: 600px) { 
+    .hoy{
+        padding-left: 40%;
+    }
+}
+
+@media(min-width: 900px) { 
+    .hoy{
+        padding-left: 42%;
+    }
+}
+
+@media(min-width: 1000px) { 
+    .hoy{
+        padding-left: 44%;
+    }
+}
+@media(min-width: 1100px) { 
+    .hoy{
+        padding-left: 45%;
+    }
+}
 
 
 
