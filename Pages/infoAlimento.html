@@ -8,8 +8,8 @@
   <title>Informacion de alimento</title>
   <!-- local CSS -->
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/unido.css">
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
   <!-- CDNS -->
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -45,10 +45,10 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link" href="#">Alimentos</a>
+              <a class="nav-link primerElemento" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="agregaralimento.html">Agregar Alimento</a>
+              <a class="nav-link primerElemento" href="crearAlimento.html">Crear Alimento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="diario.html">Diario</a>
@@ -62,7 +62,7 @@
         <div class="d-flex align-items-center">
           <!-- Icon -->
           <a class="link-secondary me-3" href="#">
-            <i class="fas fa-newspaper""></i>
+            <i class="fas fa-newspaper redirigirNoticias""></i>
               <span class=" badge rounded-pill badge-notification bg-danger">!</span>
           </a>
 
@@ -74,10 +74,10 @@
               </a>
               <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" href="#">Mi Perfil</a>
+                  <a class="dropdown-item" href="ajustesPerfil.html">Mi Perfil</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                  <a class="dropdown-item" href="../index.html">Cerrar Sesion</a>
                 </li>
                 </ul>
           </div>
@@ -114,13 +114,13 @@
     <div class="container-infoali">
       <h3>Huevo</h3>
       <div class="row">
-        <div class="col-sm">
-          <p class="fs-4 mb-0" id="txtcantidad">Cantidad:</p>
+        <div class="col-sm mb-1">
+          <p class="fs-3 mt-2 mb-1" id="txtcantidad">Cantidad:</p>
           <p class="fs-4">4</p>
         </div>
         <div class="col-sm">
-          <p class="fs-4 mb-0">Macronutrientes:</p>
-          <div class="row">
+          <p class="fs-3 mt-2 mb-1">Macronutrientes:</p>
+          <div class="row mb-1">
             <div class="col-sm">
               <p id="proteinas" class="fs-4">P: 27g</p>
             </div>
@@ -133,8 +133,8 @@
           </div>
         </div>
       </div>
-      <p class="fs-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat harum dolores, consequatur, alias voluptatum mollitia illo, maxime itaque adipisci blanditiis tenetur beatae eius. Tenetur error ex sed dolore dolor.</p>
-      <p class="fs-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat harum dolores, consequatur, alias voluptatum mollitia illo, maxime itaque adipisci blanditiis tenetur beatae eius. Tenetur error ex sed dolore dolor.</p>
+      <p class="fs-4 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat harum dolores, consequatur, alias voluptatum mollitia illo, maxime itaque adipisci blanditiis tenetur beatae eius. Tenetur error ex sed dolore dolor.</p>
+      <p class="fs-4 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi quaerat harum dolores, consequatur, alias voluptatum mollitia illo, maxime itaque adipisci blanditiis tenetur beatae eius. Tenetur error ex sed dolore dolor.</p>
     </div>
     <div class="container">
       <div class="row">
@@ -191,7 +191,7 @@
       <h6>Kevin Josefath Nañez de la Rosa</h6>
       <h6>Jorge Luis Picazo Picazo</h6>
       <h6>Daniel Eduardo Mesias Cortina</h6>
-      <a class="text-white" href="https://www.uanl.mx/">UANL</a>
+      <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>
     </div>
     <!-- Copyright -->
   </footer>
