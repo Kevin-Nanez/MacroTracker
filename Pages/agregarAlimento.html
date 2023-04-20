@@ -8,9 +8,8 @@
   <title>Agregar Alimento</title>
   <!-- local CSS -->
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/agregaralimento.css">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <!-- CDNS -->
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -44,10 +43,10 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="#">Alimentos</a>
+              <a class="nav-link" href="#">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="agregaralimento.html">Agregar Alimento</a>
+              <a class="nav-link" href="agregaralimento.html">Agregar Alimento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="diario.html">Diario</a>
@@ -61,7 +60,7 @@
         <div class="d-flex align-items-center">
           <!-- Icon -->
           <a class="link-secondary me-3" href="#">
-            <i class="fas fa-newspaper redirigirNoticias"></i>
+            <i class="fas fa-newspaper"></i>
               <span class=" badge rounded-pill badge-notification bg-danger">!</span>
           </a>
 
@@ -73,10 +72,10 @@
               </a>
               <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" href="ajustesPerfil.html">Mi Perfil</a>
+                  <a class="dropdown-item" href="#">Mi Perfil</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="../index.html">Cerrar Sesion</a>
+                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
                 </li>
                 </ul>
           </div>
@@ -119,15 +118,15 @@
     </div>
 
     <!-- Alimentos -->
-    <div class="container-2">
+    <div class="container-add">
       <div class="row justify-content-center d-flex align-items-center">
-        <div class="col-sm espacio fs-4">
-          <p class="fw-semibold info_alimento cursor-pointer">Huevo entero</p>
+        <div class="col-sm fs-4">
+          <p class="fw-semibold">Huevo entero</p>
         </div>
-        <div class="col-sm espacio fs-4">
+        <div class="espacioadd col-sm unidades fs-4" id="espacioadd">
           <input type="number">Unidades
         </div>
-        <div class="col-sm espacio fs-4">
+        <div class=" col-sm fs-4">
           <div class="row">
             <div class="col-sm">
               <p>P: 40g</p>
@@ -139,48 +138,38 @@
             </div>
           </div>
         </div>
-        <div class="col-sm espacio fs-4">
-          <button class="btn fs-5 amarillo text-dark redirigirDiario">
-            Añadir +
-          </button>
+        <div class="espacioadd col-sm fs-4">
+          <button class="btn btn-custom text-dark">Añadir +</button>
         </div>
-      </div>
-  </div>
-    
-
-  <div class="container-2">
-    <div class="row justify-content-center d-flex align-items-center">
-      <div class="col-sm espacio fs-4">
-        <p class="fw-semibold info_alimento cursor-pointer">Huevo entero</p>
-      </div>
-      <div class="col-sm espacio fs-4">
-        <input type="number">Unidades
-      </div>
-      <div class="col-sm espacio fs-4">
-        <div class="row">
-          <div class="col-sm">
-            <p>P: 40g</p>
-            <p>C: 2g</p>
-          </div>
-          <div class="col-sm">
-            <p>G: 4g</p>
-            <p>200kcal</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm espacio fs-4">
-        <button class="btn fs-5 amarillo text-dark redirigirDiario">
-          Añadir +
-        </button>
       </div>
     </div>
-</div>
+    
 
-<div class="col-sm text-center mb-5">
-  <button class="btn mt-4 fs-5 amarillo text-dark redirigirCrearar">
-    Crear Alimento
-  </button>
-</div>
+    <div class="container-add">
+      <div class="row justify-content-center d-flex align-items-center">
+        <div class="col-sm fs-4">
+          <p class="fw-semibold">Huevo entero</p>
+        </div>
+        <div class="espacioadd col-sm unidades fs-4" id="espacioadd">
+          <input type="number">Unidades
+        </div>
+        <div class=" col-sm fs-4">
+          <div class="row">
+            <div class="col-sm">
+              <p>P: 40g</p>
+              <p>C: 2g</p>
+            </div>
+            <div class="col-sm">
+              <p>G: 4g</p>
+              <p>200kcal</p>
+            </div>
+          </div>
+        </div>
+        <div class="espacioadd col-sm fs-4">
+          <button class="btn btn-custom text-dark">Añadir +</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="text-center text-white"">
@@ -206,13 +195,12 @@
       <h6>Kevin Josefath Nañez de la Rosa</h6>
       <h6>Jorge Luis Picazo Picazo</h6>
       <h6>Daniel Eduardo Mesias Cortina</h6>
-      <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>
+      <a class="text-white" href="https://www.uanl.mx/">UANL</a>
     </div>
     <!-- Copyright -->
   </footer>
 
   <!-- CDNS -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 <script src="../js/script.js"></script>

@@ -155,8 +155,6 @@ button:hover{
         flex-wrap: wrap;
     }
 
-/* agregado por kevin, lo hace mas responsive, cambiar table */
-
 @media(max-width: 650px) {  
     .table-diario td[data-title]{
     display: flex;
@@ -233,7 +231,7 @@ button:hover{
 
 
 
-/* Agregar Alimento */
+/* Agregar Alimentos */
 
 .search-container {
     margin: auto; 
@@ -283,22 +281,17 @@ button:hover{
     color: var(--negro);
 }
 
-.container-2 {
+.container-add {
     background-color: var(--grisCalro);
     border-radius: 20px;
     padding: 10px;
     margin: 20px auto;
     width: 80%;
     text-align: center;
-}
-.espacio {
     color: var(--negro);
-    height: auto;
-    padding: 10px;
-    text-align: center;
 }
 
-.espacio input[type="number"]{
+.unidades input[type="number"]{
     background-color: var(--negro);
     border: white;
     border-radius: 10px;
@@ -308,18 +301,11 @@ button:hover{
     color: white;
 }
 
-.btn.btn-custom{
-    background-color:var(--amarillo);
-    font-size: 1em;
-}
-
-.btn.btn-custom:hover{
-    background-color: var(--amarilloHover); 
-}
-
-.btn.btn-custom:active{
-    background-color: var(--amarilloHover); 
-}
+@media(max-width: 570px) { 
+    .espacioadd{
+        margin-bottom: 20px;
+    }
+}  
 
 @media screen and (max-width: 600px) {
     .search-container {
@@ -333,7 +319,7 @@ button:hover{
   }
 
 
-/* registro */
+/* Registro */
 
 .user-input-box label{  
     width: 95%;
@@ -349,7 +335,7 @@ button:hover{
 }
 
 
-/* login */
+/* Login */
 
 .text-decoration-underline{
     color: var(--grisCalro);
@@ -359,5 +345,39 @@ button:hover{
     color: var(--amarillo);
 }
 
-/* guias */
+/* Info Alimentos y Guias */
+
+.container-infoali{
+    background-color:var(--grisOscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 40px 20px 40px;
+}
+
+.imgenlace{
+    padding: 20px;
+    border-radius: 20px;
+    height: 300px;
+    border-radius: 50px;
+    width: 400px;
+    position: relative;
+}
+
+.txtenlace{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: var(--negro);
+}
+
+
+.imgenlace:hover{
+    transform: scale(1.1);
+    transition: all 400ms;
+}
+
 
