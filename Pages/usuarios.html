@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aprobar Alimentos</title>
+  <title>Usuarios</title>
   <!-- local CSS -->
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/styles.css">
@@ -97,88 +97,98 @@
     <!-- Tabla -->
     <div class="container-diario text-center">
       <div class="table-responsive">
-        <h2 class="fw-bold">Aprobar Alimentos</h2>
+        <h2 class="fw-bold">Usuarios</h2>
         <table class="table table-diario border-0">
           <thead class="thead-dark">
             <tr class="mt-2">
               <th>ID</th>
-              <th>Alimento (100g)</th>
-              <th>Macronutrientes</th>
-             
+              <th>Usuario</th>
+              <th>Peso</th>
+              <th>Altura</th>
+              <th>Sexo</th>
+              <th>Edad</th>
             </tr>
+
           </thead>
           <tbody>
-            <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">1</td>
-              <td data-title="Cantidad: " class="align-middle">Atún</td>
-              <td data-title="Información:" class="align-middle">
-                <div class="row">
-                  <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
-                  </div>
-                  <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
-                  </div>
-                </div>
-              </td>
+            <tr class="registrodiario mb-3">
+              <td data-title="ID: " class="align-middle">1</td>
+              <td data-title="Usuario: " class="align-middle">Ronaldo</td>
+              <td data-title="Peso" class="align-middle">83 kg</td>
+              <td data-title="Altura" class="align-middle">187 cm</td>
+              <td data-title="Sexo" class="align-middle">M</td>
+              <td data-title="Edad" class="align-middle">38</td>
+
               <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
                     <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-square-check mb-4 mb-sm-0" style="color:#292929;"></i>
+                      <i class="fa-solid fa-pen edit info_usuario mb-4 mb-sm-0" style="color:#292929;"></i>
                     </button>
                   </div>
                   <div class="col-sm">
                     <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
+                      <i class="fa-solid fa-trash" style="color:#292929;"></i>
                     </button>
                   </div>
                 </div>
               </td>
             </tr>
-            <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">2</td>
-              <td data-title="Cantidad: " class="align-middle">Salmón</td>
-              <td data-title="Información:" class="align-middle">
-                <div class="row">
-                  <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
+
+            <tr class="registrodiario mt-3 mb-3">
+                <td data-title="ID: " class="align-middle">2</td>
+                <td data-title="Usuario: " class="align-middle">Messi</td>
+                <td data-title="Peso" class="align-middle">72 kg</td>
+                <td data-title="Altura" class="align-middle">170 cm</td>
+                <td data-title="Sexo" class="align-middle">M</td>
+                <td data-title="Edad" class="align-middle">35</td>
+  
+                <td class="align-middle">
+                  <div class="row">
+                    <div class="col-sm">
+                      <button class="border-0 bg-transparent">
+                        <i class="fa-solid fa-pen edit info_usuario mb-4 mb-sm-0" style="color:#292929;"></i>
+                      </button>
+                    </div>
+                    <div class="col-sm">
+                      <button class="border-0 bg-transparent">
+                        <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
+                </td>
+              </tr>
+
+              <tr class="registrodiario mt-3 mb-3">
+                <td data-title="ID: " class="align-middle">3</td>
+                <td data-title="Usuario: " class="align-middle">Gignac</td>
+                <td data-title="Peso" class="align-middle">85 kg</td>
+                <td data-title="Altura" class="align-middle">189 cm</td>
+                <td data-title="Sexo" class="align-middle">M</td>
+                <td data-title="Edad" class="align-middle">37</td>
+  
+                <td class="align-middle">
+                  <div class="row">
+                    <div class="col-sm">
+                      <button class="border-0 bg-transparent">
+                        <i class="fa-solid fa-pen edit info_usuario mb-4 mb-sm-0" style="color:#292929;"></i>
+                      </button>
+                    </div>
+                    <div class="col-sm">
+                      <button class="border-0 bg-transparent">
+                        <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td class="align-middle">
-                <div class="row">
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-square-check mb-4 mb-sm-0" style="color:#292929;"></i>
-                    </button> 
-                  </div>
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
-                    </button>
-                  </div>
-                </div>
-              </td>
-            </tr>
+                </td>
+              </tr>
           </tbody>
         </table>
       </div>
-          <button class="btn mt-4 fs-5 amarillo text-dark redirigirAlimento">
-            Añadir Alimento
+          <button class="btn mt-4 fs-5 amarillo text-dark">
+            Añadir Usuario
           </button>
     </div>
-
-
-
-
   </main>
 
   <footer class="text-center text-white"">
