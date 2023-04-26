@@ -113,75 +113,77 @@ CREATE TABLE alimento(
 id_alimento int primary key AUTO_INCREMENT not null,
 alimento varchar(35) not null,
 descripcion varchar(300) not null,
-contenido ENUM('100 g', '100 ml', '1 unidad'),
+id_unidades int not null,
 calorias int,
 proteinas float,
 grasas float,
-carbohidratos float,
-img blob
+carbohidratos float
 );
 
-INSERT INTO alimento (alimento, descripcion, contenido, calorias, proteinas, grasas, carbohidratos)
-VALUES ('Huevo', 'Huevo de gallina', '1 unidad', 78, 6.29, 5.3, 0.6),
-('Pechuga de pollo', 'Pechuga de pollo sin piel', '100 g', 165, 31, 3.6, 0),
-('Arroz', 'Arroz blanco cocido', '100 g', 130, 2.7, 0.3, 28),
-('Mazapan de la rosa (28g)', 'Mazapan de cacahuate', '1 unidad', 71, 2.5, 5, 19),
-('Gansito', 'Pastelillo de chocolate relleno de crema', '1 unidad', 180, 2, 7, 29),
-('Coca-cola', 'Refresco de cola', '100 ml', 42, 0, 0, 10.6),
-('Avena', 'Avena en hojuelas', '100 g', 379, 13, 6.5, 67),
-('Leche', 'Leche entera', '100 ml', 66, 3.3, 3.6, 4.8);
+INSERT INTO alimento (alimento, descripcion, id_unidades, calorias, proteinas, grasas, carbohidratos)
+VALUES ('Huevo', 'Huevo de gallina', 3, 78, 6.29, 5.3, 0.6),
+('Pechuga de pollo', 'Pechuga de pollo sin piel', 1, 165, 31, 3.6, 0),
+('Arroz', 'Arroz blanco cocido', 4, 130, 2.7, 0.3, 28),
+('Mazapan de la rosa (28g)', 'Mazapan de cacahuate', 3, 71, 2.5, 5, 19),
+('Gansito', 'Pastelillo de chocolate relleno de crema', 3, 180, 2, 7, 29),
+('Coca-cola', 'Refresco de cola', 2, 42, 0, 0, 10.6),
+('Avena', 'Avena en hojuelas', 1, 379, 13, 6.5, 67),
+('Leche', 'Leche entera', 2, 66, 3.3, 3.6, 4.8);
 
 
+CREATE TABLE unidades (
+id_unidades int not null primary key auto_increment,
+descripcion varchar(30)
+);
+
+
+INSERT INTO unidades (descripcion)
+values ('100 g') , ('100 ml'),('Pieza(s)'), ('Taza (s)'),('bolsa(s)'),('lata(s)');
 
 CREATE TABLE alimentos_comida(
 id_alimentos_comida int primary key AUTO_INCREMENT not null,
-fecha date not null,
 id_alimento int not null,
 alimento varchar(35),
 id_comida int not null,
 cantidad float not null,
-contenido ENUM('100 g', '100 ml', '1 unidad'),
 calorias_detalle int,
 proteinas_detalle float,
 grasas_detalle float,
 carbohidratos_detalle float,
 FOREIGN KEY (id_alimento) REFERENCES alimento(id_alimento),
-FOREIGN KEY (id_comida) REFERENCES comida(id_comida),
-FOREIGN KEY (fecha) REFERENCES comida(fecha)
+FOREIGN KEY (id_comida) REFERENCES comida(id_comida)
 );
 
-INSERT INTO alimentos_comida (id_alimento, fecha, id_comida, cantidad) VALUES
-(1, '2023-04-18', 1, 2),
-(2, '2023-04-18', 1, 3),
-(3, '2023-04-18', 1, 1),
-(5, '2023-04-18', 1, 2),
-(8, '2023-04-18', 1, 1),
-(4, '2023-04-18', 2, 3),
-(6, '2023-04-18', 2, 2),
-(1, '2023-04-18', 2, 1),
-(3, '2023-04-18', 3, 1),
-(6, '2023-04-18', 3, 3),
-(7, '2023-04-18', 3, 2),
-(2, '2023-04-19', 4, 1),
-(4, '2023-04-19', 4, 2),
-(6, '2023-04-19', 4, 3),
-(5, '2023-04-19', 5, 1),
-(3, '2023-04-19', 5, 2),
-(8, '2023-04-19', 5, 3),
-(1, '2023-04-19', 6, 3),
-(2, '2023-04-19', 6, 2),
-(4, '2023-04-19', 6, 1),
-(8, '2023-04-19', 7, 2),
-(7, '2023-04-19', 7, 3),
-(6, '2023-04-19', 7, 1),
-(1, '2023-04-19', 8, 2);
+INSERT INTO alimentos_comida (id_alimento, id_comida, cantidad) VALUES
+(1, 1, 2),
+(2, 1, 3),
+(3, 1, 1),
+(5, 1, 2),
+(8, 1, 1),
+(4, 2, 3),
+(6, 2, 2),
+(1, 2, 1),
+(3, 3, 1),
+(6, 3, 3),
+(7, 3, 2),
+(2, 4, 1),
+(4, 4, 2),
+(6, 4, 3),
+(5, 5, 1),
+(3, 5, 2),
+(8, 5, 3),
+(1, 6, 3),
+(2, 6, 2),
+(4, 6, 1),
+(8, 7, 2),
+(7, 7, 3),
+(6, 7, 1),
+(1, 8, 2);
 
--- traer campos alimento y contenido de tabla alimento 
+-- traer campos alimento y contenido de tabla alimento a alimentos_comida
 SET SQL_SAFE_UPDATES = 0;
-UPDATE alimentos_comida
-INNER JOIN alimento ON alimentos_comida.id_alimento = alimento.id_alimento
-SET alimentos_comida.alimento = alimento.alimento,
-    alimentos_comida.contenido = alimento.contenido;
+    
+    
 -- calcular calorias, proteinas, grasas y carbohidratos.
 UPDATE alimentos_comida
 SET calorias_detalle = (
@@ -365,7 +367,7 @@ id_solicitud int primary key AUTO_INCREMENT not null,
 id_usuario int not null,
 alimento varchar(35),
 descripcion varchar(300) not null,
-contenido ENUM('100 g', '100 ml', '1 unidad'),
+id_unidades int not null,
 calorias int,
 proteinas float,
 grasas float,
@@ -373,15 +375,14 @@ carbohidratos float,
 FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
-INSERT INTO solicitud_alimento (id_usuario, alimento, descripcion, contenido, calorias, proteinas, grasas, carbohidratos)
-VALUES (1, 'Leche', 'Leche descremada en polvo', '100 g', 362, 34.5, 1.0, 52.0),
-(1, 'Huevos', 'Huevos de gallina', '1 unidad', 155, 12.6, 10.6, 1.1),
-(2, 'Arroz', 'Arroz integral', '100 g', 130, 2.7, 0.9, 28.0),
-(2, 'Manzana', 'Manzana fuji', '1 unidad', 95, 0.5, 0.3, 25.1),
-(3, 'Atún', 'Atún enlatado', '100 g', 109, 26.5, 0.7, 0.0),
-(3, 'Lechuga', 'Lechuga romana', '100 g', 17, 1.2, 0.2, 3.3);
-
-select * from solicitud_alimento;
+INSERT INTO solicitud_alimento (id_usuario, alimento, descripcion, id_unidades, calorias, proteinas, grasas, carbohidratos)
+VALUES (1, 'Leche', 'Leche descremada en polvo', '1', 362, 34.5, 1.0, 52.0),
+(1, 'Huevos', 'Huevos de gallina', '3', 155, 12.6, 10.6, 1.1),
+(2, 'Arroz', 'Arroz integral', '4', 130, 2.7, 0.9, 28.0),
+(2, 'Manzana', 'Manzana fuji', '3', 95, 0.5, 0.3, 25.1),
+(3, 'Atún', 'Atún enlatado', '1', 109, 26.5, 0.7, 0.0),
+(5, 'Jugo de naranja', 'Jugo de naranja marca Jumex', '2', 44, 0, 0, 11.0),
+(3, 'Lechuga', 'Lechuga romana', '1', 17, 1.2, 0.2, 3.3);
 
 
 
