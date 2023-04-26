@@ -1,0 +1,11 @@
+@media (min-width: 600px) {
+    .columns {
+      flex-direction: row;
+    }
+  
+    .half {
+      width: 50%;
+    }
+  }
+
+  
