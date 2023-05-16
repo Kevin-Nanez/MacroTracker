@@ -7,7 +7,7 @@ $(document).ready(function () {
   });
   // redirigir a iniciar sesion cuando se de click en un boton
   $(".redirigirLogin").on("click", function () {
-    event.preventDefault();
+  
     window.location.href = "../Pages/login.html";
   });
   $(".redirigirAgregar").on("click", function () {
