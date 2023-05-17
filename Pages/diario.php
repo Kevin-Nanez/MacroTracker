@@ -257,64 +257,118 @@ include "../includes/functions.php";
     </div>
     <!-- Tabla -->
     <div class="container-diario text-center">
-    <?php
-    $fechaS= "2023-05-10"; 
+      <?php
+      $fechaS = "2023-05-10";
 
-    $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$fechaS}';";
-  
-    $query = mysqli_query($db,$sql);
-    while ($row = mysqli_fetch_assoc($query)) {
-      $num_comida = $row['num_comida'];
-      // Aquí puedes mostrar los datos de cada comida en el HTML
+      $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$fechaS}';";
+
+      $query = mysqli_query($db, $sql);
+      while ($row = mysqli_fetch_assoc($query)) {
+        $num_comida = $row['num_comida'];
+
       ?>
-      <div class="comida p-2 rounded-7 mt-3">
+        <div class="comida p-2 rounded-7 mt-3">
           <div>
-              <h2 class="fs-2 mt-2">Comida <?php echo $num_comida; ?></h2>
+            <h2 class="fs-2 mt-2">Comida <?php echo $num_comida; ?></h2>
           </div>
           <div class="table-responsive">
-              <table class="table table-diario border-0">
-                  <thead class="thead-dark">
-                      <tr class="mt-2">
-                          <th>Alimento</th>
-                          <th>Cantidad</th>
-                          <th>Información</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr class="registrodiario mt-3">
-                          <td data-title="Alimento:" class="align-middle cursor-pointer info_alimento">Pechuga de Pollo</td>
-                          <td data-title="Cantidad:" class="align-middle">100g</td>
-                          <td data-title="Información:" class="align-middle">
-                              <div class="row">
-                                  <div class="col-sm text-truncate">
-                                      <p>P: 40g</p>
-                                      <p>C: 2g</p>
-                                  </div>
-                                  <div class="col-sm text-truncate">
-                                      <p>G: 4g</p>
-                                      <p>200kcal</p>
-                                  </div>
-                              </div>
-                          </td>
-                          <td class="align-middle">
-                              <div class="row">
-                                  <div class="col-sm">
-                                      <button class="border-0 bg-transparent">
-                                          <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
-                                      </button>
-                                  </div>
-                                  <div class="col-sm">
-                                      <button class="border-0 bg-transparent">
-                                          <i class="fa-solid fa-trash" style="color:#292929;"></i>
-                                      </button>
-                                  </div>
-                              </div>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
+            <table class="table table-diario border-0">
+              <thead class="thead-dark">
+                <tr class="mt-2">
+                  <th>Alimento</th>
+                  <th>Cantidad</th>
+                  <th>Información</th>
+                </tr>
+              </thead>
+
+              <?php
+              $sqlComida = "
+    SELECT * FROM alimentos_comida 
+    INNER JOIN comida ON comida.id_comida = alimentos_comida.id_comida
+    INNER JOIN alimento ON alimento.id_alimento = alimentos_comida.id_alimento
+    INNER JOIN unidades ON unidades.id_unidades = alimento.id_unidades
+    WHERE comida.id_usuario = {$_SESSION['id_usuario']} AND comida.fecha = '{$fechaS}' AND comida.num_comida= {$num_comida};";
+
+              $queryComida = mysqli_query($db, $sqlComida);
+              while ($rowComida = mysqli_fetch_assoc($queryComida)) {
+                $num_comida = $rowComida['num_comida'];
+              ?>
+                <tbody>
+                  <tr class="registrodiario mt-3">
+                    <td data-title="Alimento:" class="align-middle cursor-pointer info_alimento">
+                      <?php
+                      echo $rowComida['alimento'];
+                      ?>
+                    </td>
+                    <td data-title="Cantidad:" class="align-middle">
+                      <?php
+
+                      switch ($rowComida['id_unidades']) {
+                        case 1:
+                          echo ($rowComida['cantidad']*100) . " g";
+                          break;
+
+                        case 3:
+                          echo ($rowComida['cantidad']*100) . " ml";
+                          break;
+
+                        default:
+                          echo $rowComida['cantidad'] . " " . $rowComida['descripcion'];
+                          break;
+                      }
+                      ?>
+                    </td>
+                    <td data-title="Información:" class="align-middle">
+                      <div class="row">
+                        <div class="col-sm text-truncate">
+                          <p>P:
+                            <?php
+                            echo ($rowComida['cantidad'] * $rowComida['proteinas']);
+                            ?>
+                            g</p>
+                          <p>C: 
+                          <?php
+                            echo ($rowComida['cantidad'] * $rowComida['carbohidratos']);
+                            ?>  
+                          g</p>
+                        </div>
+                        <div class="col-sm text-truncate">
+                          <p>G: 
+                          <?php
+                            echo ($rowComida['cantidad'] * $rowComida['grasas']);
+                            ?>
+                            g</p>
+                          <p>
+                          <?php
+                            echo ($rowComida['cantidad'] * $rowComida['calorias']);
+                            ?>  
+                          kcal</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle">
+                      <div class="row">
+                        <div class="col-sm">
+                          <button class="border-0 bg-transparent">
+                            <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
+                          </button>
+                        </div>
+                        <div class="col-sm">
+                          <button class="border-0 bg-transparent">
+                            <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              <?php };  ?>
+            </table>
+            <button class="btn mb-3 mt-1 fs-5 amarillo text-dark ">
+            Añadir Alimento
+          </button>
           </div>
-      </div>
+        </div>
       <?php };  ?>
 
 
@@ -328,7 +382,6 @@ include "../includes/functions.php";
         <div class="col-sm">
           <button class="btn mt-4 fs-5 amarillo text-dark redirigirCrearar">
             Crear Alimento
-            <?php $hola = mysqli_num_rows($result); ?>
           </button>
         </div>
       </div>
