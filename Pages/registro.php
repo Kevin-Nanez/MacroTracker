@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-$message = "hola";
+
 
 if (isset($_POST["submit"])) {
   include "../includes/db.php";
@@ -80,12 +80,6 @@ include "../includes/headerNoLogueado.php";
 
   <div class="container contenedorGrisOsc mb-3">
     <p class="text-light text-center fs-4 fw-bolder mt-3 pt-3 ">Registro</p>
-
-    <p class="text-light text-center fs-4 fw-bolder mt-3 pt-3 ">
-      <?=
-      $usuario;
-      ?>
-    </p>
 
     <form class="p-1" action="registro.php" method="post">
       <div class="main-user-info d-flex flex-wrap justify-content-between p-2">
