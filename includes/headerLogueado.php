@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- local CSS -->
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/styles.css">
@@ -26,9 +25,7 @@
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
 
@@ -36,16 +33,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
           <a class="navbar-brand mt-sm-0 mb-auto" href="#">
-            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo"
-              loading="lazy" />
+            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo" loading="lazy" />
           </a>
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="alimentos.php">Alimentos</a>
+              <a class="nav-link primerElemento" href="../Pages/alimentos.php">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="noticias.php">Noticias</a>
+              <a class="nav-link primerElemento" href="crearAlimento.html">Crear Alimento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../Pages/diario.php">Diario</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -54,16 +53,27 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            <!-- Icon -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
-              <li class="nav-item me-2 me-sm-0">
-                <a class="nav-link" href="../Pages/login.php">Iniciar Sesión</a>
+          <!-- Icon -->
+          <a class="link-secondary me-3" href="../Pages/noticias.php">
+            <i class="fas fa-newspaper"></i>
+            <span class=" badge rounded-pill badge-notification bg-danger">!</span>
+          </a>
+
+
+          <div class="dropdown">
+            <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user-edit"></i>
+            </a>
+            <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="ajustesPerfil.php">Mi Perfil</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../Pages/registro.php">Registrarse</a>
+              <li>
+                <a class="dropdown-item" href="/includes/logout.php">Cerrar Sesion</a>
               </li>
             </ul>
           </div>
+        </div>
         <!-- Right elements -->
       </div>
       <!-- Container wrapper -->

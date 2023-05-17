@@ -16,9 +16,23 @@ if (isset($_POST["submit"])) {
             $usuarioC = $row['usuario'];
             $usuario_Password = $row['usuario_Password'];
             $id_usuarioC = $row['id_usuario'];
+            $edadC = $row['edad'];
+            $pesoC = $row['peso'];
+            $alturaC = $row['altura'];
+            $dafC = $row['dias_af'];
+            $sexoC = $row['sexo'];
+            $objetivoC = $row['objetivo'];
+            $privilegios = $row['privilegios'];
             
           $_SESSION['usuario'] = $usuarioC;
           $_SESSION['id_usuario'] = $id_usuarioC;
+          $_SESSION['edad'] = $edadC;
+          $_SESSION['peso'] = $pesoC;
+          $_SESSION['altura'] = $alturaC;
+          $_SESSION['daf'] = $dafC;
+          $_SESSION['sexo'] = $sexoC;
+          $_SESSION['objetivo'] = $objetivoC;
+          $_SESSION['privilegios'] = $privilegios;
 
           echo "<script>alert('Usuario: {$_SESSION['id_usuario']} Contraseña: $usuario_Password'); window.location.href = 'diario.php';</script>";
           

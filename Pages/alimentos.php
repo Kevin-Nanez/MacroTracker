@@ -1,12 +1,20 @@
+
 <?php
-include "../includes/headerNoLogueado.php";
+session_start();
 include "../includes/functions.php";
-// obtiene todos los alimentos y los guarda en una variable
 $queryAlimentos = getAlimentos();
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 2 ) {
+  include "../includes/headerLogueado.php";
+} else if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ){
+  include "../includes/headerAdmin.php";
+} else{
+  include "../includes/headerNoLogueado.php";
+}
 ?>
 <head>
-  <title>Alimentos</title>
+<title>Alimentos</title>
 </head>
+
 <main>
   <!-- Tabla -->
   <div class="container-diario text-center">

@@ -94,7 +94,7 @@ include "../includes/headerNoLogueado.php";
         <div class="user-input-box d-flex flex-wrap w-50">
           <div class="container ps-2 pe-0">
             <label class="text-light fs-5 fw-bolder mb-2 mt-2">Edad</label>
-            <input name="edad" type="number" id="age" placeholder="" min="1" max="100">
+            <input name="edad" type="number" id="age" placeholder="" min="1" max="150">
           </div>
         </div>
 
@@ -108,7 +108,7 @@ include "../includes/headerNoLogueado.php";
         <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
 
           <label class="text-light fs-5 fw-bolder mb-2 mt-2">Altura (cm)</label>
-          <input name="altura" type="number" id="height" placeholder="" min="1" max="230">
+          <input name="altura" type="number" id="height" placeholder="" min="1" max="270">
         </div>
 
         <div class="user-input-box d-flex flex-wrap w-50">
