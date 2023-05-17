@@ -78,6 +78,10 @@
 
 
 /* Diario, Alimentos y Aprobar Alimentos */
+.comida{
+    background-color: var(--negro);
+}
+
 
 .menudiario{
     width: 1400px;

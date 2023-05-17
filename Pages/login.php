@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset($_POST["submit"])) {
     include "../includes/db.php";
 
@@ -13,8 +15,14 @@ if (isset($_POST["submit"])) {
         if (isset($row['usuario']) && isset($row['usuario_Password'])) {
             $usuarioC = $row['usuario'];
             $usuario_Password = $row['usuario_Password'];
-            echo "<script>alert('Usuario: $usuarioC Contraseña: $usuario_Password')</script>";
+            $id_usuarioC = $row['id_usuario'];
+            
+          $_SESSION['usuario'] = $usuarioC;
+          $_SESSION['id_usuario'] = $id_usuarioC;
 
+          echo "<script>alert('Usuario: {$_SESSION['id_usuario']} Contraseña: $usuario_Password'); window.location.href = 'diario.php';</script>";
+          
+          //header('Location: diario.php');
         } else {
             echo "<script>alert('No se pudo obtener información de usuario')</script>";
         }

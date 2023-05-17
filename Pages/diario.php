@@ -1,3 +1,11 @@
+<?php
+session_start();
+include "../includes/db.php";
+include "../includes/functions.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,9 +35,7 @@
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
 
@@ -37,8 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
           <a class="navbar-brand mt-sm-0 mb-auto" href="#">
-            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo"
-              loading="lazy" />
+            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2" height="30" alt="MDB Logo" loading="lazy" />
           </a>
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
@@ -66,8 +71,7 @@
 
           <!-- Notifications -->
           <div class="dropdown">
-            <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user-edit"></i>
             </a>
             <ul class=" dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
@@ -142,8 +146,7 @@
               <div class="container contenedorGrisOsc">
                 <!-- header del modal  -->
                 <div class="modal-header  text-white ">
-                  <a  class="cerrarModal cursor-pointer bg-light btn btn-secondary btn-icon-only position-relative top-0 start-0 mt-3 ms-3 preventD"
-                    aria-label="Close">
+                  <a class="cerrarModal cursor-pointer bg-light btn btn-secondary btn-icon-only position-relative top-0 start-0 mt-3 ms-3 preventD" aria-label="Close">
                     <i class="fas fa-arrow-left"></i>
                   </a>
                   <div class="container pt-4 text-center">
@@ -196,8 +199,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-4 mb-4">
-                      <button id="buscarFecha" type="button"
-                        class="btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5">Ir</button>
+                      <button id="buscarFecha" type="button" class="btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5">Ir</button>
                     </div>
                   </div>
                 </div>
@@ -207,116 +209,126 @@
         </div>
       </div>
     </div>
-   
+
 
 
     <div class="container-cals p-3 text-center">
+      <div class="row elemdiario">
+        <p class="fs-2">Bienvenido <?php echo $_SESSION['usuario'];  ?> </p>
+      </div>
       <div class="row">
         <div class="col-sm elemdiario p-3 fs-4">
           <p>Objetivo</p>
-          <p>2400</p>
+          <p>
+            <?php
+            $sql = "SELECT objetivo FROM usuario WHERE usuario='{$_SESSION['usuario']}' ;";
+            $result = mysqli_query($db, $sql);
+            $row = mysqli_fetch_assoc($result);
+            $objetivoS = $row['objetivo'];
+            echo $objetivoS;
+            ?>
+          </p>
         </div>
         <div class="container col-1 elemdiario p-3 fs-4 d-flex justify-content-center align-items-center">
           <p>-</p>
         </div>
         <div class="col-sm elemdiario p-3 fs-4">
           <p>Alimentos</p>
-          <p>800</p>
+          <p>
+            <?php
+            $alimentoS = 300;
+            echo $alimentoS;
+            ?>
+          </p>
         </div>
         <div class="container col-1 elemdiario p-3 fs-4 d-flex justify-content-center align-items-center">
           <p>=</p>
         </div>
         <div class="col-sm elemdiario p-3 fs-4">
           <p>Restantes</p>
-          <p>1600</p>
+          <p>
+            <?php
+            $restantes = $objetivoS - $alimentoS;
+            echo $restantes;
+            ?>
+          </p>
         </div>
       </div>
     </div>
     <!-- Tabla -->
     <div class="container-diario text-center">
-      <div class="table-responsive">
-        <table class="table table-diario border-0">
-          <thead class="thead-dark">
-            <tr class="mt-2">
-              <th>Alimento</th>
-              <th>Cantidad</th>
-              <th>Información</th>
-             
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">Pechuga de Pollo</td>
-              <td data-title="Cantidad: " class="align-middle">100g</td>
-              <td data-title="Información:" class="align-middle">
-                <div class="row">
-                  <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
-                  </div>
-                  <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
-                  </div>
-                </div>
-              </td>
-              <td class="align-middle">
-                <div class="row">
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
-                    </button>
-                  </div>
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
-                    </button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">Pechuga de Pollo</td>
-              <td data-title="Cantidad: " class="align-middle">100g</td>
-              <td data-title="Información:" class="align-middle">
-                <div class="row">
-                  <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
-                  </div>
-                  <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
-                  </div>
-                </div>
-              </td>
-              <td class="align-middle">
-                <div class="row">
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
-                    </button>
-                  </div>
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
-                    </button>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <?php
+    $fechaS= "2023-05-10"; 
+
+    $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$fechaS}';";
+  
+    $query = mysqli_query($db,$sql);
+    while ($row = mysqli_fetch_assoc($query)) {
+      $num_comida = $row['num_comida'];
+      // Aquí puedes mostrar los datos de cada comida en el HTML
+      ?>
+      <div class="comida p-2 rounded-7 mt-3">
+          <div>
+              <h2 class="fs-2 mt-2">Comida <?php echo $num_comida; ?></h2>
+          </div>
+          <div class="table-responsive">
+              <table class="table table-diario border-0">
+                  <thead class="thead-dark">
+                      <tr class="mt-2">
+                          <th>Alimento</th>
+                          <th>Cantidad</th>
+                          <th>Información</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="registrodiario mt-3">
+                          <td data-title="Alimento:" class="align-middle cursor-pointer info_alimento">Pechuga de Pollo</td>
+                          <td data-title="Cantidad:" class="align-middle">100g</td>
+                          <td data-title="Información:" class="align-middle">
+                              <div class="row">
+                                  <div class="col-sm text-truncate">
+                                      <p>P: 40g</p>
+                                      <p>C: 2g</p>
+                                  </div>
+                                  <div class="col-sm text-truncate">
+                                      <p>G: 4g</p>
+                                      <p>200kcal</p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td class="align-middle">
+                              <div class="row">
+                                  <div class="col-sm">
+                                      <button class="border-0 bg-transparent">
+                                          <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
+                                      </button>
+                                  </div>
+                                  <div class="col-sm">
+                                      <button class="border-0 bg-transparent">
+                                          <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
       </div>
+      <?php };  ?>
+
+
+
       <div class="row ">
         <div class="col-sm">
-          <button class="btn mt-4 fs-5 amarillo text-dark redirigirAgregar">
-            Agregar Alimento
+          <button class="btn mt-4 fs-5 amarillo text-dark">
+            Nueva Comida
           </button>
         </div>
         <div class="col-sm">
           <button class="btn mt-4 fs-5 amarillo text-dark redirigirCrearar">
             Crear Alimento
+            <?php $hola = mysqli_num_rows($result); ?>
           </button>
         </div>
       </div>
@@ -335,8 +347,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
           <div class="ratio ratio-16x9">
-            <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/P8W_SqjMd9M"
-              title="YouTube video" allowfullscreen></iframe>
+            <iframe class="shadow-1-strong rounded" src="https://www.youtube.com/embed/P8W_SqjMd9M" title="YouTube video" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -356,8 +367,7 @@
   </footer>
 
   <!-- CDNS -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
   <script src="../js/script.js"></script>
