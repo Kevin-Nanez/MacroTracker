@@ -41,7 +41,7 @@
               <a class="nav-link primerElemento" href="../Pages/alimentos.php">Alimentos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="crearAlimento.html">Crear Alimento</a>
+              <a class="nav-link primerElemento" href="crearAlimento.php">Crear Alimento</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="../Pages/diario.php">Diario</a>
