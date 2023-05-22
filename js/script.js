@@ -15,10 +15,18 @@ $(".borrarAlimentoBD").on("click",function(){
   var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();
   window.location.href = "../includes/delete_alimento.php?id=" + idalimento;
 });
+
 $(".borrarsolicitud").on("click",function(){
   var idalimento = $(this).closest("tr").find("td[data-title='Alimento:']").text().trim();
   window.location.href = "../includes/delete_solicitud.php?id=" + idalimento;
 });
+
+$(".aceptarsolicitud").on("click",function(){
+  var idalimento = $(this).closest("tr").find("td[data-title='Alimento:']").text().trim();
+  window.location.href = "../includes/aceptar_solicitud.php?id=" + idalimento;
+});
+
+
 
 $(".updateAlimentoBD").on("click", function() {
   var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();

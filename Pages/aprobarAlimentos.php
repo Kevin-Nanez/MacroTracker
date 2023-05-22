@@ -53,7 +53,7 @@ $resultquery = mysqli_query($db,$sqlquery);
               <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent aceptarsolicitud">
                       <i class="fa-solid fa-square-check mb-4 mb-sm-0" style="color:#292929;"></i>
                     </button>
                   </div>
