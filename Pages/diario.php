@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 2 ) {
+  include "../includes/headerLogueado.php";
+} else if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ){
+    header('Location: reportes.php');
+} else{
+  echo "<script>alert('Inicie Sesión para acceder al diario'); window.location.href = 'login.php';</script>";
+}
+
+
 include "../includes/db.php";
 include "../includes/headerLogueado.php";
 ?>

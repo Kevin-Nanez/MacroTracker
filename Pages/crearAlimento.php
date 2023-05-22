@@ -8,9 +8,35 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 } else{
   include "../includes/headerNoLogueado.php";
 }
+
+include "../includes/db.php";
+
+if (isset($_POST["submit"])) {
+  
+  $id_usuario= $_SESSION['id_usuario'];
+  $alimento = $_POST["alimento"];
+  $descripcion = $_POST["descripcion"];
+  $proteinas = $_POST["proteinas"];
+  $carbos = $_POST["carbos"];
+  $grasas = $_POST["grasas"];
+  $ckal = $_POST["ckal"];
+  $unidades = $_POST["unidades"];
+
+  $sql = "INSERT INTO solicitud_alimento (id_usuario, alimento, descripcion, id_unidades, calorias, proteinas, grasas, carbohidratos)
+  VALUES ('{$id_usuario}', '{$alimento}', '{$descripcion}', '{$unidades}', '{$ckal}' , {$proteinas}, {$grasas}, {$carbos})";
+
+    $result = mysqli_query($db, $sql);
+    
+    if($result){
+      echo "<script>alert('Alimento enviado con éxito'); window.location.href = 'diario.php';</script>";
+    }
+}
+
+
+
 ?>
 <head>
-<title>Guias</title>
+<title>Crear Alimento</title>
 </head>
 
    <!-- MAIN -->
@@ -18,42 +44,45 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 
     <div class="container contenedorGrisOsc mt-3 mb-3">
         <h1 class="text-light text-center fs-4 fw-bolder mt-3 pt-3">Crear Alimento</h1>
-        <form action="#" class="p-3" id="formularioCrearAlimento">
+        <form action="crearAlimento.php" method="post" class="p-3" id="formularioCrearAlimento">
           <div class="main-food-info d-flex flex-wrap justify-content-between p-2">
             
             <div class="user-input-box d-flex flex-wrap w-50 pe-2">
               <label class="text-light fs-5 fw-bolder mb-2 mt-2">Alimento</label>
-              <input type="text" id="food name" placeholder="" minlength="3" maxlength="35">
+              <input name="alimento" type="text" id="food name" placeholder="" minlength="3" maxlength="35">
             </div>
 
             <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
               <label class="text-light fs-5 fw-bolder mb-2 mt-2">Kcal</label>
-              <input type="number" id="kcal" placeholder="" min="0">
+              <input name="ckal" type="number" id="kcal" placeholder="" min="0">
             </div>
             
             <div class="user-input-box d-flex flex-wrap w-50 pe-2">
               <label class="text-light fs-5 fw-bolder mb-2 mt-2">Descripción</label>
-              <input type="tex" id="description" placeholder="" minlength="1" maxlength="125">
+              <input name="descripcion" type="text" id="description" placeholder="" minlength="1" maxlength="125">
             </div>
 
             <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
               <label class="text-light fs-5 fw-bolder mb-2 mt-2">Proteínas (g)</label>
-              <input  type="number" id="protein" placeholder="" min="0"  step="0.1">
+              <input name="proteinas" type="number" id="protein" placeholder="" min="0"  step="0.1">
             </div>
 
             <div class="user-input-box d-flex flex-wrap w-50 pe-2">
               <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contenido</label>
-              <select class="form-select " id="content">
+              <select name="unidades" class="form-select " id="content">
                 <option value="" disabled selected>Selecciona una opción</option>
-                <option value="100 g">100 g</option>
-                <option value="100 ml">100 ml</option>
-                <option value="1 unidad">1 unidad</option>
+                <option value="1">100 g</option>
+                <option value="2">Una unidad</option>
+                <option value="3">100 ml</option>
+                <option value="4">Una taza</option>
+                <option value="5">Una onza(oz)</option>
+                <option value="6">Una cucharada</option>
               </select>
           </div>
 
           <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
             <label class="text-light fs-5 fw-bolder mb-2 mt-2">Grasas (g)</label>
-            <input type="number" id="fat" placeholder="" min="0" step="0.1">
+            <input name="grasas" type="number" id="fat" placeholder="" min="0" step="0.1">
         </div>
 
          <!--ESTE NADA MÁS ES DE RELLENO PARA QUE NO SE MUEVA EL ORDEN-->
@@ -62,11 +91,11 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 
           <div class="user-input-box d-flex flex-wrap w-50 pe-2">
             <label class="text-light fs-5 fw-bolder mb-2 mt-2">Carbohidratos (g)</label>
-            <input type="number" id="carbs" placeholder="" min="0"  step="0.1">
+            <input name="carbos" type="number" id="carbs" placeholder="" min="0"  step="0.1">
           </div>
 
-          <button type="submit"
-          class=" mt-3 mb-0 btn fs-5 text-dark btn-block amarillo p-3 redirigirLogin">Enviar</button>
+          <button type="submit" name="submit"
+          class=" mt-3 mb-0 btn fs-5 text-dark btn-block amarillo p-3">Enviar</button>
 
         </form>
     </div>

@@ -1,9 +1,23 @@
 <?php
+session_start();
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ) {
+} else {
+  echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'update_user.php?id={$id}';</script>";
+}
 include "../includes/headerAdmin.php";
 include "../includes/functions.php";
 // obtiene todos los alimentos y los guarda en una variable
 $queryUsuarios = getUsuarios();
+
+include "../includes/db.php";
+
+
+
+
 ?>
+
+
+
 
 <head>
 <title>Usuarios</title>
@@ -31,7 +45,7 @@ $queryUsuarios = getUsuarios();
           <?php while ($usuario = mysqli_fetch_assoc($queryUsuarios)) { ?>
 
             <tr class="registrodiario mb-3">
-              <td data-title="ID: " class="align-middle"><?php echo $usuario["id_usuario"];?> </td>
+              <td data-title="ID:" class="align-middle"> <?php echo $usuario["id_usuario"];?> </td>
               <td data-title="Usuario: " class="align-middle"><?php echo $usuario["usuario"];?></td>
               <td data-title="Peso: " class="align-middle"><?php echo $usuario["peso"];?> kg</td>
               <td data-title="Altura: " class="align-middle"><?php echo $usuario["altura"];?> cm</td>
@@ -41,12 +55,12 @@ $queryUsuarios = getUsuarios();
               <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent updateUsuario">
                       <i class="fa-solid fa-pen edit info_usuario mb-4 mb-sm-0" style="color:#292929;"></i>
                     </button>
                   </div>
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent borrarUsuario" >
                       <i class="fa-solid fa-trash" style="color:#292929;"></i>
                     </button>
                   </div>
@@ -59,7 +73,7 @@ $queryUsuarios = getUsuarios();
           </tbody>
         </table>
       </div>
-          <button class="btn mt-4 fs-5 amarillo text-dark">
+          <button class="btn mt-4 fs-5 amarillo text-dark addUserAdmin">
             Añadir Usuario
           </button>
     </div>

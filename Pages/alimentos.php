@@ -34,7 +34,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
           <?php while ($alimento = mysqli_fetch_assoc($queryAlimentos)) { ?>
 
             <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento"> <?php echo $alimento["id_alimento"];   ?>  </td>
+              <td data-title="iDAlimento:" class="align-middle cursor-pointer info_alimento"> <?php echo $alimento["id_alimento"];   ?>  </td>
               <td data-title="Cantidad: " class="align-middle"><?php echo $alimento["alimento"];   ?></td>
               <td data-title="Información:" class="align-middle">
                 <div class="row">
@@ -51,12 +51,12 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
               <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent updateAlimentoBD">
                       <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
                     </button>
                   </div>
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent borrarAlimentoBD">
                       <i class="fa-solid fa-trash " style="color:#292929;"></i>
                     </button>
                   </div>
@@ -68,7 +68,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
         </tbody>
       </table>
     </div>
-    <button class="btn mt-4 fs-5 amarillo text-dark redirigirAgregar">
+    <button class="btn mt-4 fs-5 amarillo text-dark addFoodAdmin">
       Añadir Alimento
     </button>
   </div>
