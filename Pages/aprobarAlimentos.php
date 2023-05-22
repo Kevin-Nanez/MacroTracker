@@ -4,9 +4,15 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 } else {
   echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'update_user.php?id={$id}';</script>";
 }
-
-
+include "../includes/db.php";
 include "../includes/headerAdmin.php";
+
+$sqlquery = "SELECT * FROM solicitud_alimento;";
+$resultquery = mysqli_query($db,$sqlquery);
+
+
+
+
 ?>
 
   <head>
@@ -22,24 +28,25 @@ include "../includes/headerAdmin.php";
           <thead class="thead-dark">
             <tr class="mt-2">
               <th>ID</th>
-              <th>Alimento (100g)</th>
+              <th>Alimento</th>
               <th>Macronutrientes</th>
              
             </tr>
           </thead>
           <tbody>
+          <?php while ($alimento = mysqli_fetch_assoc($resultquery)) { ?>
             <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">1</td>
-              <td data-title="Cantidad: " class="align-middle">Atún</td>
+              <td data-title="Alimento:"  class="align-middle  "> <?php echo $alimento["id_solicitud"];?></td>
+              <td data-title="Cantidad: " class="align-middle"><?php echo $alimento["alimento"];?></td>
               <td data-title="Información:" class="align-middle">
                 <div class="row">
                   <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
+                    <p>P: <?php echo $alimento["proteinas"];?>g</p>
+                    <p>C: <?php echo $alimento["carbohidratos"];?>g</p>
                   </div>
                   <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
+                    <p>G: <?php echo $alimento["grasas"];?>g</p>
+                    <p><?php echo $alimento["calorias"];?>kcal</p>
                   </div>
                 </div>
               </td>
@@ -51,43 +58,15 @@ include "../includes/headerAdmin.php";
                     </button>
                   </div>
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent">
+                    <button class="border-0 bg-transparent borrarsolicitud">
                       <i class="fa-solid fa-trash " style="color:#292929;"></i>
                     </button>
                   </div>
                 </div>
               </td>
             </tr>
-            <tr class="registrodiario mt-3">
-              <td data-title="Alimento: " class="align-middle cursor-pointer info_alimento">2</td>
-              <td data-title="Cantidad: " class="align-middle">Salmón</td>
-              <td data-title="Información:" class="align-middle">
-                <div class="row">
-                  <div class="col-sm text-truncate">
-                    <p>P: 40g</p>
-                    <p>C: 2g</p>
-                  </div>
-                  <div class="col-sm text-truncate">
-                    <p>G: 4g</p>
-                    <p>200kcal</p>
-                  </div>
-                </div>
-              </td>
-              <td class="align-middle">
-                <div class="row">
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-square-check mb-4 mb-sm-0" style="color:#292929;"></i>
-                    </button> 
-                  </div>
-                  <div class="col-sm">
-                    <button class="border-0 bg-transparent">
-                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
-                    </button>
-                  </div>
-                </div>
-              </td>
-            </tr>
+            <?php };  ?>
+
           </tbody>
         </table>
       </div>

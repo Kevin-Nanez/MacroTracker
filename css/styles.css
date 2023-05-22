@@ -384,4 +384,11 @@ button:hover{
     transition: all 400ms;
 }
 
+.text-decoration-none{
+    text-decoration: none;
+    color: var(--negro);
+}
 
+.text-decoration-none:hover{
+    color: var(--grisCalro);
+}

@@ -107,7 +107,7 @@ include "../includes/headerAdmin.php";
       
         <div class="full container-fluid fs-3 fw-bold p-3 text-center text-dark border-2 amarillo">
           <p>Solicitdues</p>
-          <button type="button" class="btn btn-secondary text-dark fs-6">Alimentos por aprobar</button>
+          <button type="button" class="btn btn-secondary text-dark fs-6 aprobar">Alimentos por aprobar</button>
       </div> 
 
   </main>

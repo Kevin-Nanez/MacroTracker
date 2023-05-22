@@ -244,6 +244,7 @@ include "../includes/db.php";
                             echo ($rowComida['cantidad'] * $rowComida['calorias']);
                             ?>
                             kcal</p>
+                            <p class="d-none"><?php echo $rowComida['id_alimento']; ?></p>
                         </div>
                       </div>
                     </td>
