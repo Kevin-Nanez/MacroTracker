@@ -12,25 +12,19 @@ $id = $_GET['id'];
 
 $sqlAlimentosComida = "DELETE FROM alimentos_comida WHERE id_alimento = $id";
 $resultAlimentosComida = mysqli_query($db, $sqlAlimentosComida);
-if ($resultAlimentosComida) {
-  echo "<script>alert('Filas eliminadas en la tabla alimentos_comida correctamente');</script>";
-} else {
+if (!$resultAlimentosComida) {
   echo "<script>alert('Error al eliminar filas en la tabla alimentos_comida');</script>";
 }
-
 
 $sql = "DELETE FROM alimento WHERE id_alimento = $id";
 $result = mysqli_query($db, $sql);
 
-if ($result) {
-  echo "<script>alert('Fila eliminada en la tabla alimento correctamente');</script>";
-} else {
+if (!$result) {
   echo "<script>alert('Error al eliminar fila en la tabla alimento');</script>";
+} else{
+  echo "<script>alert('alimento Eliminado'); window.location.href = '../pages/alimentos.php';</script>";
 }
 
 header('Location: ../pages/alimentos.php');
-
-echo "<script>alert('alimento Eliminado'); window.location.href = '../pages/alimentos.php';</script>";
-
 
 ?>

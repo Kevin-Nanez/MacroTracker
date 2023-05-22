@@ -62,6 +62,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="../Pages/usuarios.php">Usuarios</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../includes/logout.php">Cerrar Sesión</a>
+              </li>
             </ul>
           </div>
         <!-- Right elements -->

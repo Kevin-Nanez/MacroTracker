@@ -11,7 +11,6 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 
 
 include "../includes/db.php";
-include "../includes/headerLogueado.php";
 ?>
 
   <main>

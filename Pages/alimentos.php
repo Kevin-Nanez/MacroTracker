@@ -44,7 +44,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
                   </div>
                   <div class="col-sm text-truncate">
                     <p>G: <?php echo $alimento["grasas"];   ?>g</p>
-                    <p><?php echo $alimento["calorias"];   ?> ckal</p>
+                    <p><?php echo $alimento["calorias"];   ?> kcal</p>
                   </div>
                 </div>
               </td>

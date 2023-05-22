@@ -18,7 +18,7 @@ $(".borrarAlimentoBD").on("click",function(){
 
 $(".updateAlimentoBD").on("click", function() {
   var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();
-  window.location.href = "../includes/update_alimento.php?id=" + idalimento;
+  window.location.href = "../pages/update_alimento.php?id=" + idalimento;
 });
 
 $(".addUserAdmin").on("click",function(){

@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ) {
   } else {
-    echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'update_user.php?id={$id}';</script>";
+    echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = '';</script>";
   }
 
 include "db.php";
@@ -27,6 +27,7 @@ if (isset($_POST["submit"])) {
   $edad = $_POST["edad"];
   $daf = $_POST["daf"];
 
+  
   if (empty($usuario) || empty($usuario_password) || empty($cPassword) || empty($sexo) || empty($altura) || empty($peso) || empty($edad) || empty($daf)) {
     echo "<script>alert('Campos Incompletos'); window.location.href = 'update_user.php?id={$id}';</script>";
   }
