@@ -27,6 +27,9 @@ $(".aceptarsolicitud").on("click",function(){
 });
 
 
+$(".nuevaComida").on("click",function(){
+  window.location.href = "../pages/nuevaComida.php";
+});
 
 $(".updateAlimentoBD").on("click", function() {
   var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();

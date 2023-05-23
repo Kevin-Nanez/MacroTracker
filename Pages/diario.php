@@ -115,7 +115,8 @@ include "../includes/db.php";
 
     <div class="container-cals p-3 text-center">
       <div class="row elemdiario">
-        <p class="fs-2">Bienvenido <?php echo $_SESSION['usuario'];  ?> </p>
+        <p class="fs-2">Bienvenido <?php echo $_SESSION['usuario'];?> </p>
+        <p class="fs-2">Fecha: <?php echo $_SESSION['fecha'];?> </p>
       </div>
       <div class="row">
         <div class="col-sm elemdiario p-3 fs-4">
@@ -159,9 +160,8 @@ include "../includes/db.php";
     <!-- Tabla -->
     <div class="container-diario text-center">
       <?php
-      $fechaS = "2023-05-10";
 
-      $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$fechaS}';";
+      $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$_SESSION['fecha']}';";
 
       $query = mysqli_query($db, $sql);
       while ($row = mysqli_fetch_assoc($query)) {
@@ -188,7 +188,7 @@ include "../includes/db.php";
     INNER JOIN comida ON comida.id_comida = alimentos_comida.id_comida
     INNER JOIN alimento ON alimento.id_alimento = alimentos_comida.id_alimento
     INNER JOIN unidades ON unidades.id_unidades = alimento.id_unidades
-    WHERE comida.id_usuario = {$_SESSION['id_usuario']} AND comida.fecha = '{$fechaS}' AND comida.num_comida= {$num_comida};";
+    WHERE comida.id_usuario = {$_SESSION['id_usuario']} AND comida.fecha = '{$_SESSION['fecha']}' AND comida.num_comida= {$num_comida};";
 
               $queryComida = mysqli_query($db, $sqlComida);
               while ($rowComida = mysqli_fetch_assoc($queryComida)) {
@@ -277,7 +277,7 @@ include "../includes/db.php";
 
       <div class="row ">
         <div class="col-sm">
-          <button class="btn mt-4 fs-5 amarillo text-dark">
+          <button class="btn mt-4 fs-5 amarillo text-dark NuevaComida">
             Nueva Comida
           </button>
         </div>

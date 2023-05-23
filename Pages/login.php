@@ -34,6 +34,7 @@ if (isset($_POST["submit"])) {
           $_SESSION['sexo'] = $sexoC;
           $_SESSION['objetivo'] = $objetivoC;
           $_SESSION['privilegios'] = $privilegios;
+          $_SESSION['fecha'] = date('Y-m-d');
 
           echo "<script>alert('Usuario: {$_SESSION['id_usuario']} Contraseña: $usuario_Password'); window.location.href = 'diario.php';</script>";
           
