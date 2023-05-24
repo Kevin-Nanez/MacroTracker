@@ -93,9 +93,14 @@ $(".addFoodAdmin").on("click",function(){
   });
 
 
+  $(".addAlimentoComida").on("click", function() {
+    var numcomida = $(this).data("numcomida");
+    window.location.href = "../pages/agregarAlimento.php?numcomida=" + numcomida;
+  });
 
-
-  
+  $(".crearAlimento").on("click",function(){
+    window.location.href = "../Pages/crearAlimento.php";
+  });
 
 
 });
