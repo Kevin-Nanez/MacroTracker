@@ -21,14 +21,14 @@ include "../includes/db.php";
 
             <div class="d-flex flex-nowrap flex-sm-row">
               <div class="col-sm">
-                <button class="flecha me-sm-0 me-md-3 me-xl-5">
+                <button class="flecha diaanterior me-sm-0 me-md-3 me-xl-5">
                   < </button>
               </div>
               <div class="col-sm">
                 <div class="text-center text-md-start">Hoy</div>
               </div>
               <div class="col-sm">
-                <button class="flecha ms-sm-0 ms-md-3 ms-xl-5">></button>
+                <button class="flecha diasiguiente ms-sm-0 ms-md-3 ms-xl-5">></button>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ include "../includes/db.php";
                   </div>
                   <div class="row">
                     <div class="col-md-12 mt-4 mb-4">
-                      <button id="buscarFecha" type="button" class="btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5">Ir</button>
+                      <button id="buscarFecha" type="button" class="btn text-dark brodenegro2 btn-block amarillo fw-700 fs-6 rounded-5 cambiarfecha">Ir</button>
                     </div>
                   </div>
                 </div>
@@ -110,8 +110,6 @@ include "../includes/db.php";
         </div>
       </div>
     </div>
-
-
 
     <div class="container-cals p-3 text-center">
       <div class="row elemdiario">
@@ -166,7 +164,7 @@ include "../includes/db.php";
       $query = mysqli_query($db, $sql);
       while ($row = mysqli_fetch_assoc($query)) {
         $num_comida = $row['num_comida'];
-
+        $error= $query;
       ?>
         <div class="comida p-2 rounded-7 mt-3">
           <div>
@@ -266,7 +264,7 @@ include "../includes/db.php";
                 </tbody>
               <?php };  ?>
             </table>
-            <button class="btn mb-3 mt-1 fs-5 amarillo text-dark ">
+            <button class="btn mb-3 mt-1 fs-5 amarillo text-dark addalimentodiario">
               Añadir Alimento
             </button>
           </div>
@@ -277,7 +275,7 @@ include "../includes/db.php";
 
       <div class="row ">
         <div class="col-sm">
-          <button class="btn mt-4 fs-5 amarillo text-dark NuevaComida">
+          <button class="btn mt-4 fs-5 amarillo text-dark nuevaComida">
             Nueva Comida
           </button>
         </div>

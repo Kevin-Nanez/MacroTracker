@@ -74,7 +74,23 @@ $(".addFoodAdmin").on("click",function(){
     window.location.href= "../pages/aprobarAlimentos.php";
   });
 
+  $(".diaanterior").on("click", function() {
 
+    window.location.href = "../pages/diaanterior.php";
+  });
+
+  $(".diasiguiente").on("click", function() {
+
+    window.location.href = "../pages/diasiguiente.php";
+  });
+
+  $(".cambiarfecha").on("click", function() {
+    var dia = $("#selectDia").val();
+    var mes = $("#selectMes").val();
+    var year = $("#selectAnio").val();
+  
+    window.location.href = "../pages/cambiarfecha.php?dia=" + dia + "&mes=" + mes + "&year=" + year;
+  });
 
 
 
