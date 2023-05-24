@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 2) {
   include "../includes/headerLogueado.php";
 } else if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1) {
@@ -9,38 +8,64 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
   echo "<script>alert('Inicie Sesión para acceder al diario'); window.location.href = 'login.php';</script>";
 }
 include "../includes/db.php";
-$numcomida= $_GET['numcomida'];
+$numcomida = $_GET['numcomida'];
+
+$sql = "SELECT a.*, u.descripcion as unidad_descripcion
+FROM alimento a
+INNER JOIN unidades u ON a.id_unidades = u.id_unidades;";
+
+$queryAlimentos = mysqli_query($db, $sql);
+
 ?>
 
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.busqueda').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+        $('.container-add').each(function() {
+          var alimentoNombre = $(this).find('.nombre-alimento').text().toLowerCase();
+          if (alimentoNombre.includes(searchText)) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+  </script>
+</head>
 <title>Añadir Alimento</title>
 
-  <main>
-    <!-- Buscador -->
-    <div>
-      <form class="search-container">
-        <button type="submit"><i class="fa fa-search""></i></button>
-        <input class="busqueda fw-700" type="text" placeholder="Buscar..." ">
-      </form>
-    </div>
+<main>
+  <!-- Buscador -->
+  <div>
+    <form class="search-container">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <input class="busqueda fw-700" type="text" placeholder="Buscar...">
+    </form>
+  </div>
 
+  <?php while ($alimento = mysqli_fetch_assoc($queryAlimentos)) { ?>
     <!-- Alimentos -->
     <div class="container-add">
       <div class="row justify-content-center d-flex align-items-center">
         <div class="col-sm fs-4">
-          <p class="fw-semibold cursor- mt-3">Huevo entero</p>
+          <p class="fw-semibold cursor- mt-3 nombre-alimento"><?php echo $alimento["alimento"]; ?></p>
         </div>
         <div class="espacioadd col-sm unidades fs-4" id="espacioadd">
-          <input type="number">Unidades
+          <input type="number"><?php echo $alimento["unidad_descripcion"]; ?>
         </div>
-        <div class=" col-sm fs-4">
+        <div class="col-sm fs-4">
           <div class="row">
             <div class="col-sm">
-              <p>P: 40g</p>
-              <p>C: 2g</p>
+              <p>P: <?php echo $alimento["proteinas"]; ?>g</p>
+              <p>C: <?php echo $alimento["carbohidratos"]; ?>g</p>
             </div>
             <div class="col-sm">
-              <p>G: 4g</p>
-              <p>200kcal</p>
+              <p>G: <?php echo $alimento["grasas"]; ?>g</p>
+              <p><?php echo $alimento["calorias"]; ?> kcal</p>
             </div>
           </div>
         </div>
@@ -49,8 +74,7 @@ $numcomida= $_GET['numcomida'];
         </div>
       </div>
     </div>
-    
-
+  <?php }; ?>
     
 
 
@@ -94,6 +118,48 @@ $numcomida= $_GET['numcomida'];
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 <script src="../js/script.js"></script>
+
+
+
+<script>
+    $(document).ready(function() {
+//   $.fn.DataTable.ext.pager.numbers_length = 5;
+    $('#example').DataTable( {
+
+// que aparezcan ultimo siguiente etc...
+       "pagingType":"full_numbers",
+// ordenamos
+       "order": [[ 2, "ASC" ]],
+    //    cambiamos idioma
+       "language": {
+    "decimal":        ".",
+    "emptyTable":     "No hay datos para mostrar",
+    "info":           "del _START_ al _END_ (_TOTAL_ total)",
+    "infoEmpty":      "del 0 al 0 (0 total)",
+    "infoFiltered":   "(filtrado de todas las _MAX_ entradas)",
+    "infoPostFix":    "",
+    "thousands":      "'",
+    "lengthMenu":     "Mostrar _MENU_ entradas",
+    "loadingRecords": "Cargando...",
+    "processing":     "Procesando...",
+    "search":         "Buscar:",
+    "zeroRecords":    "No hay resultados",
+    "paginate": {
+      "first":      "Primero",
+      "last":       "Último",
+      "next":       "Siguiente",
+      "previous":   "Anterior"
+    },
+    "aria": {
+      "sortAscending":  ": ordenar de manera Ascendente",
+      "sortDescending": ": ordenar de manera Descendente ",
+    }
+  }
+
+    } );  
+} );
+
+</script>
 
 </body>
 
