@@ -55,7 +55,7 @@ $queryAlimentos = mysqli_query($db, $sql);
           <p class="fw-semibold cursor- mt-3 nombre-alimento"><?php echo $alimento["alimento"]; ?></p>
         </div>
         <div class="espacioadd col-sm unidades fs-4" id="espacioadd">
-          <input type="number"><?php echo $alimento["unidad_descripcion"]; ?>
+          <input type="number" min="0" class="cantidadalimento"><?php echo $alimento["unidad_descripcion"]; ?>
         </div>
         <div class="col-sm fs-4">
           <div class="row">
@@ -69,8 +69,13 @@ $queryAlimentos = mysqli_query($db, $sql);
             </div>
           </div>
         </div>
+        <div class="d-none">
+          <?php $id_comida = $_GET['id_comida'];?>
+          <p class="idalimento"><?php echo $alimento["id_alimento"]; ?></p>
+          <p class="id_comida"><?php echo $id_comida; ?></p>
+        </div>
         <div class="espacioadd col-sm fs-4">
-          <button class="btn btn-custom text-dark amarillo">Añadir +</button>
+        <button class="btn btn-custom text-dark amarillo addAlimentoComidacant" data-id="<?php echo $alimento["id_alimento"]; ?>">Añadir +</button>
         </div>
       </div>
     </div>

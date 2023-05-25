@@ -137,8 +137,9 @@ include "../includes/db.php";
         <p>Alimentos</p>
         <p>
           <?php
-          $alimentoS = 300;
-          echo $alimentoS;
+          $alimentoS = 0;
+          echo $_SESSION['alimentos'];
+          
           ?>
         </p>
       </div>
@@ -149,7 +150,7 @@ include "../includes/db.php";
         <p>Restantes</p>
         <p>
           <?php
-          $restantes = $objetivoS - $alimentoS;
+          $restantes = $objetivoS - $_SESSION['alimentos'];
           echo $restantes;
           ?>
         </p>
@@ -164,7 +165,9 @@ include "../includes/db.php";
 
     $query = mysqli_query($db, $sql);
     while ($row = mysqli_fetch_assoc($query)) {
+
       $num_comida = $row['num_comida'];
+      $id_comida = $row['id_comida'];
       $error = $query;
     ?>
       <div class="comida p-2 rounded-7 mt-3">
@@ -191,6 +194,7 @@ include "../includes/db.php";
 
             $queryComida = mysqli_query($db, $sqlComida);
             while ($rowComida = mysqli_fetch_assoc($queryComida)) {
+              $alimentoS += ($rowComida['cantidad'] * $rowComida['calorias']);
               $num_comida = $rowComida['num_comida'];
             ?>
               <tbody>
@@ -265,7 +269,7 @@ include "../includes/db.php";
               </tbody>
             <?php };  ?>
           </table>
-          <button class="btn mb-3 mt-1 fs-5 amarillo text-dark addAlimentoComida" data-numcomida="<?php echo $num_comida; ?>">
+          <button class="btn mb-3 mt-1 fs-5 amarillo text-dark addAlimentoComida" data-id_comida="<?php echo $id_comida; ?>">
             Añadir Alimento
           </button>
         </div>
@@ -313,6 +317,9 @@ include "../includes/db.php";
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     <h6>Kevin Josefath Nañez de la Rosa</h6>
+    <?php
+    $_SESSION['alimentos'] = $alimentoS;
+    echo $alimentoS; ?>
     <h6>Jorge Luis Picazo Picazo</h6>
     <h6>Daniel Eduardo Mesias Cortina</h6>
     <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>

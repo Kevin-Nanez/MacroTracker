@@ -94,12 +94,25 @@ $(".addFoodAdmin").on("click",function(){
 
 
   $(".addAlimentoComida").on("click", function() {
-    var numcomida = $(this).data("numcomida");
-    window.location.href = "../pages/agregarAlimento.php?numcomida=" + numcomida;
+    var id_comida = $(this).data("id_comida");
+    window.location.href = "../pages/agregarAlimento.php?id_comida=" + id_comida;
   });
 
   $(".crearAlimento").on("click",function(){
     window.location.href = "../Pages/crearAlimento.php";
+  });
+
+
+  $(".addAlimentoComidacant").on("click", function() {
+    var id_alimento = $(this).data("id");
+    var cantidad = $(this).closest(".container-add").find(".cantidadalimento").val();
+    var idcomida = $(this).closest(".container-add").find(".id_comida").text();
+
+    if(cantidad > 0){
+    window.location.href = "../Pages/addAlimentoComida.php?id_alimento=" + id_alimento + "&cantidad=" + cantidad + "&idcomida=" + idcomida;
+    }else{
+      alert('Ingrese una cantidad valida');
+    }
   });
 
 

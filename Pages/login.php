@@ -74,7 +74,7 @@ include "../includes/headerNoLogueado.php";
           </div>
               
           <div class="bottom text-center mb-"> 
-          <span><a  href="registro.html" class="text-decoration-underline mb-1">Registrarse</a></span>
+          <span><a  href="registro.php" class="text-decoration-underline mb-1">Registrarse</a></span>
           </div>
         </form>
      
