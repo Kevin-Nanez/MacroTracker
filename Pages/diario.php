@@ -137,7 +137,8 @@ include "../includes/db.php";
         <p>Alimentos</p>
         <p>
           <?php
-          $alimentoS = 0;
+          $alimentoS=0;
+
           echo $_SESSION['alimentos'];
           
           ?>
@@ -247,6 +248,7 @@ include "../includes/db.php";
                           echo ($rowComida['cantidad'] * $rowComida['calorias']);
                           ?>
                           kcal</p>
+                         <!-- ojo aqui  -->
                         <p class="d-none"><?php echo $rowComida['id_alimento']; ?></p>
                       </div>
                     </div>
@@ -255,12 +257,13 @@ include "../includes/db.php";
                     <div class="row">
                       <div class="col-sm">
                         <button class="border-0 bg-transparent">
-                          <i class="fa-solid fa-pen-to-square edit info_alimento mb-4 mb-sm-0" style="color:#292929;"></i>
+                          <i class="fa-solid fa-pen-to-square edit editarAlimentodeComida mb-4 mb-sm-0" style="color:#292929;"></i>
                         </button>
                       </div>
                       <div class="col-sm">
                         <button class="border-0 bg-transparent">
-                          <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                        <p class="d-none"><?php echo $rowComida['id_alimentos_comida']; ?></p>
+                          <i class="fa-solid fa-trash eliminarAlimentodeComida" style="color:#292929;"></i>
                         </button>
                       </div>
                     </div>

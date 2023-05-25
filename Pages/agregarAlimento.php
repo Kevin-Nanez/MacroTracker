@@ -35,8 +35,9 @@ $queryAlimentos = mysqli_query($db, $sql);
       });
     });
   </script>
+  <title>Añadir Alimento</title>
 </head>
-<title>Añadir Alimento</title>
+
 
 <main>
   <!-- Buscador -->
@@ -124,47 +125,6 @@ $queryAlimentos = mysqli_query($db, $sql);
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 <script src="../js/script.js"></script>
 
-
-
-<script>
-    $(document).ready(function() {
-//   $.fn.DataTable.ext.pager.numbers_length = 5;
-    $('#example').DataTable( {
-
-// que aparezcan ultimo siguiente etc...
-       "pagingType":"full_numbers",
-// ordenamos
-       "order": [[ 2, "ASC" ]],
-    //    cambiamos idioma
-       "language": {
-    "decimal":        ".",
-    "emptyTable":     "No hay datos para mostrar",
-    "info":           "del _START_ al _END_ (_TOTAL_ total)",
-    "infoEmpty":      "del 0 al 0 (0 total)",
-    "infoFiltered":   "(filtrado de todas las _MAX_ entradas)",
-    "infoPostFix":    "",
-    "thousands":      "'",
-    "lengthMenu":     "Mostrar _MENU_ entradas",
-    "loadingRecords": "Cargando...",
-    "processing":     "Procesando...",
-    "search":         "Buscar:",
-    "zeroRecords":    "No hay resultados",
-    "paginate": {
-      "first":      "Primero",
-      "last":       "Último",
-      "next":       "Siguiente",
-      "previous":   "Anterior"
-    },
-    "aria": {
-      "sortAscending":  ": ordenar de manera Ascendente",
-      "sortDescending": ": ordenar de manera Descendente ",
-    }
-  }
-
-    } );  
-} );
-
-</script>
 
 </body>
 

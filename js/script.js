@@ -115,5 +115,22 @@ $(".addFoodAdmin").on("click",function(){
     }
   });
 
+  $(".eliminarAlimentodeComida").on("click", function() {
+    var id_alimentos_comida = $(this).closest('td').find('p.d-none').text();
+    window.location.href = "../pages/eliminarAlimentodeComida.php?id_alimentos_comida=" + id_alimentos_comida;
+  });
+
+  $(".editarAlimentodeComida").on("click", function() {
+    var id_alimentos_comida = $(this).closest('td').find('p.d-none').text();
+    window.location.href = "../pages/editarAlimentodeComida.php?id_alimentos_comida=" + id_alimentos_comida;
+  });
+
+
+
+  $(".guardar").on("click", function() {
+    var id_alimentos_comida = $(this).closest('.row').find('.d-none p').text();
+    var cantidad = $(this).closest('.row').find('.cantidadalimento').val();
+    window.location.href = "../pages/guardar.php?id_alimentos_comida=" + id_alimentos_comida + "&cantidad=" + cantidad;
+  });
 
 });
