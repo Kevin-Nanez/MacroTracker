@@ -114,7 +114,7 @@
         <div class="row p-2 rowreverse mt-3 mb-3 ">
           <div class="container  bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
             <div>
-              <img class="img-fluid paddingsmall" src="Assets/img/index/calorias.jpg" alt="frutas y verduras con contenido calorico">
+              <img class="img-fluid paddingsmall" src="Assets/img/index/salud.jpeg" alt="frutas y verduras con contenido calorico">
             </div>
           </div>
           <div class="container-fluid bg-light col-md-5 col-lg-6 col-xl-8 col-12 rounded-7">

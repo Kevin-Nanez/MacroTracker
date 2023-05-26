@@ -13,6 +13,34 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 include "../includes/db.php";
 ?>
 
+ <?php
+  $alimentoS=0;
+
+    $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$_SESSION['fecha']}';";
+
+    $query = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_assoc($query)) {
+
+      $num_comida = $row['num_comida'];
+      $id_comida = $row['id_comida'];
+      $error = $query;
+
+            $sqlComida = "
+    SELECT * FROM alimentos_comida 
+    INNER JOIN comida ON comida.id_comida = alimentos_comida.id_comida
+    INNER JOIN alimento ON alimento.id_alimento = alimentos_comida.id_alimento
+    INNER JOIN unidades ON unidades.id_unidades = alimento.id_unidades
+    WHERE comida.id_usuario = {$_SESSION['id_usuario']} AND comida.fecha = '{$_SESSION['fecha']}' AND comida.num_comida= {$num_comida};";
+
+           $queryComida = mysqli_query($db, $sqlComida);
+            while ($rowComida = mysqli_fetch_assoc($queryComida)) {
+              $alimentoS += ($rowComida['cantidad'] * $rowComida['calorias']);
+          
+
+  $_SESSION['alimentos'] = $alimentoS;
+            };
+  };  ?>
+
 <title>Diario</title>
 <main>
   <div class="container">
@@ -195,7 +223,7 @@ include "../includes/db.php";
 
             $queryComida = mysqli_query($db, $sqlComida);
             while ($rowComida = mysqli_fetch_assoc($queryComida)) {
-              $alimentoS += ($rowComida['cantidad'] * $rowComida['calorias']);
+            
               $num_comida = $rowComida['num_comida'];
             ?>
               <tbody>

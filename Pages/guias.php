@@ -17,12 +17,19 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
       <h2>¿Cómo subir, bajar o mantener mi peso?</h2>
       <div class="row p-3">
         <div class="col-md-12 col-lg-7">
-          <p class="fs-5 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nemo
-            accusantium necessitatibus tempore. Placeat hic atque, velit non voluptatum alias voluptatibus magni aut eos
-            optio ipsam nesciunt ex architecto perferendis facere aspernatur inventore! Ea totam consectetur vero fuga
-            consequuntur aspernatur ipsam voluptatum omnis fugit, ratione sed dolore eos quod deleniti unde
-            reprehenderit temporibus, tenetur, corporis amet impedit ipsa quas? Et, officia harum. Quam nobis unde nemo
-            illum, aliquam est cumque voluptates voluptate.</p>
+          <h3>¿Cómo bajar de peso?</h2>
+          <p class="fs-5 text-justify">
+          Para bajar de peso, es necesario crear un déficit de calorías consumiendo menos calorías de las que se queman. Controlar la ingesta diaria de calorías y hacer ejercicio regularmente puede ayudar a lograrlo.
+          <p>
+          <h3>¿Cómo manetener el peso??</h2>
+          <p class="fs-5 text-justify">
+          Para mantener el peso, es importante equilibrar la ingesta diaria de calorías con el gasto energético. Mantener una alimentación saludable, hacer ejercicio de forma regular y adoptar hábitos sostenibles son clave.
+          <p>
+          <h3>¿Cómo subir de peso?</h2>
+          <p class="fs-5 text-justify">
+          Para subir de peso, se requiere un exceso de calorías consumiendo más de las que se queman. Aumentar la ingesta diaria de calorías de manera saludable con alimentos nutritivos y realizar ejercicios de fuerza puede favorecer el aumento de masa muscular.
+          <p>
+            
         </div>
         <div class="col-md-12 col-lg-5">
           <img src="../Assets/img/guias/mantenerpeso.jpg" alt="" height="500px" width="450px"
@@ -33,22 +40,17 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 
     <div class="container-infoali mt-5">
       <h2>¿Qué son los Macronutrientes?</h2>
-      <div class="row">
+      <div class="row text-justify">
         <div class="col-sm-12  col-lg-7">
-          <p class="fs-5 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nemo
-            accusantium necessitatibus tempore. Placeat hic atque, velit non voluptatum alias voluptatibus magni aut eos
-            optio ipsam nesciunt ex architecto perferendis facere aspernatur inventore! Ea totam consectetur vero fuga
-            consequuntur aspernatur ipsam voluptatum omnis fugit, ratione sed dolore eos quod deleniti unde
-            reprehenderit
-            temporibus, tenetur, corporis amet impedit ipsa quas? Et, officia harum. Quam nobis unde nemo illum, aliquam
-            est cumque voluptates voluptate.</p>
-          <p class="fs-5 text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto nemo
-            accusantium necessitatibus tempore. Placeat hic atque, velit non voluptatum alias voluptatibus magni aut eos
-            optio ipsam nesciunt ex architecto perferendis facere aspernatur inventore! Ea totam consectetur vero fuga
-            consequuntur aspernatur ipsam voluptatum omnis fugit, ratione sed dolore eos quod deleniti unde
-            reprehenderit
-            temporibus, tenetur, corporis amet impedit ipsa quas? Et, officia harum. Quam nobis unde nemo illum, aliquam
-            est cumque voluptates voluptate.</p>
+          <p class="fs-5 text-justify">Los macronutrientes son nutrientes esenciales que proporcionan energía al cuerpo: carbohidratos, proteínas y grasas. Son necesarios en cantidades significativas para el funcionamiento adecuado del organismo.</p>
+          <h3>¿Cómo distribuir los Macronutrientes?</h3>
+          <p class="fs-5 text-justify">La distribución de los macronutrientes varía según las necesidades individuales. Se recomienda un equilibrio adecuado, como una proporción moderada de carbohidratos, una ingesta suficiente de proteínas y una cantidad adecuada de grasas saludables.</p>
+          <h3>¿Qué pasa cuando tengo deficiencias de alguno?</h3>
+          <ul>
+            <li><p class="fs-5">Cuando hay deficiencia de carbohidratos, puede causar fatiga, falta de energía y disminución del rendimiento físico.</p></li>
+            <li><p class="fs-5">La deficiencia de proteínas puede llevar a la pérdida de masa muscular, debilidad y problemas de recuperación. </p></li>
+            <li><p class="fs-5">La deficiencia de grasas puede afectar la absorción de vitaminas liposolubles y provocar problemas hormonales.</p></li>
+          </ul>
         </div>
         <div class="col-sm-12 col-lg-5 d-flex align-items-center">
           <div class="row">
