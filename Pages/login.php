@@ -4,7 +4,6 @@ session_start();
 
 if (isset($_POST["submit"])) {
     include "../includes/db.php";
-
     $usuario = $_POST["usuario"];
     $usuario_password = $_POST["usuario_Password"];
     $sql = "SELECT * FROM usuario WHERE usuario='{$usuario}' AND usuario_Password ='{$usuario_password}';";
@@ -36,14 +35,12 @@ if (isset($_POST["submit"])) {
           $_SESSION['privilegios'] = $privilegios;
           $_SESSION['fecha'] = date('Y-m-d');
 
-          echo "<script>alert('Usuario: {$_SESSION['id_usuario']} Contraseña: $usuario_Password'); window.location.href = 'diario.php';</script>";
-          
-          //header('Location: diario.php');
+          header('Location: diario.php');
         } else {
             echo "<script>alert('No se pudo obtener información de usuario')</script>";
         }
     } else {
-        echo "<script>alert('Contraseña o usuario incorrectos')</script>";
+        echo "<script>alert('Contraseña o usuario incorrecto')</script>";
     }
 }
 

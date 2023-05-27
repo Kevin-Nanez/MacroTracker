@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 2) {
   include "../includes/headerLogueado.php";
 } else if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1) {
@@ -14,6 +15,7 @@ include "../includes/db.php";
 ?>
 
  <?php
+  $_SESSION['alimentos']=0;
   $alimentoS=0;
 
     $sql = "SELECT * FROM comida WHERE id_usuario = {$_SESSION['id_usuario']} AND fecha = '{$_SESSION['fecha']}';";

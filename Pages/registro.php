@@ -15,6 +15,7 @@ if (isset($_POST["submit"])) {
   $daf = $_POST["daf"];
 
   if ($usuario_password === $cPassword) {
+    //$hash_usuario_password = password_hash($usuario_password, PASSWORD_DEFAULT);
     $sql = "SELECT * FROM usuario WHERE usuario='$usuario'";
     $result = mysqli_query($db, $sql);
     if (!$result->num_rows > 0) {
@@ -47,13 +48,13 @@ if (isset($_POST["submit"])) {
       }
 
       $sql = "INSERT INTO usuario (usuario ,usuario_password, sexo, edad, altura, peso, dias_af, objetivo)
-      VALUES ('{$usuario}', '{$cPassword}', '{$sexo}', '{$edad}', '{$altura}' , {$peso}, {$daf}, {$objetivo})";
+      VALUES ('{$usuario}', '{$usuario_password}', '{$sexo}', '{$edad}', '{$altura}' , {$peso}, {$daf}, {$objetivo})";
 
       $result = mysqli_query($db, $sql);
       if ($result) {
         echo "<script>alert('Usuario registrado con éxito'); window.location.href = 'login.php';</script>";
         $usuario = "";
-        $usuario_password = "";
+        $hash_usuario_password = "";
         $_POST["usuario_password"] = "";
         $_POST["confpassword"] = "";
         $cPassword = "";
