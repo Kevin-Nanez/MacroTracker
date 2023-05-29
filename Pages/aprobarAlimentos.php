@@ -4,79 +4,80 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 } else {
   echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'update_user.php?id={$id}';</script>";
 }
-include "../includes/headerAdmin.php";
-include "../includes/functions.php";
-// obtiene todos los alimentos y los guarda en una variable
-$queryUsuarios = getUsuarios();
-
 include "../includes/db.php";
+include "../includes/headerAdmin.php";
+
+$sqlquery = "SELECT * FROM solicitud_alimento;";
+$resultquery = mysqli_query($db,$sqlquery);
 
 
 
 
 ?>
 
-
-
-
-<head>
-<title>Usuarios</title>
-</head>
+  <head>
+    <title>Aprobar Alimentos</title>
+  </head>
 
   <main>
     <!-- Tabla -->
     <div class="container-diario text-center">
       <div class="table-responsive">
-        <h2 class="fw-bold">Usuarios</h2>
+        <h2 class="fw-bold">Aprobar Alimentos</h2>
         <table class="table table-diario border-0">
           <thead class="thead-dark">
             <tr class="mt-2">
               <th>ID</th>
-              <th>Usuario</th>
-              <th>Peso</th>
-              <th>Altura</th>
-              <th>Sexo</th>
-              <th>Edad</th>
+              <th>Alimento</th>
+              <th>Macronutrientes</th>
+             
             </tr>
-
           </thead>
           <tbody>
-
-          <?php while ($usuario = mysqli_fetch_assoc($queryUsuarios)) { ?>
-
-            <tr class="registrodiario mb-3">
-              <td data-title="ID:" class="align-middle"> <?php echo $usuario["id_usuario"];?> </td>
-              <td data-title="Usuario: " class="align-middle"><?php echo $usuario["usuario"];?></td>
-              <td data-title="Peso: " class="align-middle"><?php echo $usuario["peso"];?> kg</td>
-              <td data-title="Altura: " class="align-middle"><?php echo $usuario["altura"];?> cm</td>
-              <td data-title="Sexo: " class="align-middle"><?php echo $usuario["sexo"];?></td>
-              <td data-title="Edad: " class="align-middle"><?php echo $usuario["edad"];?> Años</td>
-
+          <?php while ($alimento = mysqli_fetch_assoc($resultquery)) { ?>
+            <tr class="registrodiario mt-3">
+              <td data-title="Alimento:"  class="align-middle  "> <?php echo $alimento["id_solicitud"];?></td>
+              <td data-title="Cantidad: " class="align-middle"><?php echo $alimento["alimento"];?></td>
+              <td data-title="Información:" class="align-middle">
+                <div class="row">
+                  <div class="col-sm text-truncate">
+                    <p>P: <?php echo $alimento["proteinas"];?>g</p>
+                    <p>C: <?php echo $alimento["carbohidratos"];?>g</p>
+                  </div>
+                  <div class="col-sm text-truncate">
+                    <p>G: <?php echo $alimento["grasas"];?>g</p>
+                    <p><?php echo $alimento["calorias"];?>kcal</p>
+                  </div>
+                </div>
+              </td>
               <td class="align-middle">
                 <div class="row">
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent updateUsuario">
-                      <i class="fa-solid fa-pen edit info_usuario mb-4 mb-sm-0" style="color:#292929;"></i>
+                    <button class="border-0 bg-transparent aceptarsolicitud">
+                      <i class="fa-solid fa-square-check mb-4 mb-sm-0" style="color:#292929;"></i>
                     </button>
                   </div>
                   <div class="col-sm">
-                    <button class="border-0 bg-transparent borrarUsuario" >
-                      <i class="fa-solid fa-trash" style="color:#292929;"></i>
+                    <button class="border-0 bg-transparent borrarsolicitud">
+                      <i class="fa-solid fa-trash " style="color:#292929;"></i>
                     </button>
                   </div>
                 </div>
               </td>
             </tr>
-
             <?php };  ?>
 
           </tbody>
         </table>
       </div>
-          <button class="btn mt-4 fs-5 amarillo text-dark addUserAdmin">
-            Añadir Usuario
+          <button class="btn mt-4 fs-5 amarillo text-dark addFoodAdmin">
+            Añadir Alimento
           </button>
     </div>
+
+
+
+
   </main>
 
   <footer class="text-center text-white"">

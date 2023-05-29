@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ) {
+} else {
+  echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'diario.php';</script>";
+}
 error_reporting(0);
 
 
@@ -14,8 +19,11 @@ if (isset($_POST["submit"])) {
   $edad = $_POST["edad"];
   $daf = $_POST["daf"];
 
+  if (empty($usuario) || empty($usuario_password) || empty($cPassword) || empty($sexo) || empty($altura) || empty($peso) || empty($edad) || empty($daf)) {
+    echo "<script>alert('Campos Incompletos'); window.location.href = 'addUserAdmin.php';</script>";
+  }
+
   if ($usuario_password === $cPassword) {
-    //$hash_usuario_password = password_hash($usuario_password, PASSWORD_DEFAULT);
     $sql = "SELECT * FROM usuario WHERE usuario='$usuario'";
     $result = mysqli_query($db, $sql);
     if (!$result->num_rows > 0) {
@@ -48,13 +56,13 @@ if (isset($_POST["submit"])) {
       }
 
       $sql = "INSERT INTO usuario (usuario ,usuario_password, sexo, edad, altura, peso, dias_af, objetivo)
-      VALUES ('{$usuario}', '{$usuario_password}', '{$sexo}', '{$edad}', '{$altura}' , {$peso}, {$daf}, {$objetivo})";
+      VALUES ('{$usuario}', '{$cPassword}', '{$sexo}', '{$edad}', '{$altura}' , {$peso}, {$daf}, {$objetivo})";
 
       $result = mysqli_query($db, $sql);
       if ($result) {
-        echo "<script>alert('Usuario registrado con éxito'); window.location.href = 'login.php';</script>";
+        echo "<script>alert('Usuario registrado con éxito'); window.location.href = 'usuarios.php';</script>";
         $usuario = "";
-        $hash_usuario_password = "";
+        $usuario_password = "";
         $_POST["usuario_password"] = "";
         $_POST["confpassword"] = "";
         $cPassword = "";
@@ -74,15 +82,15 @@ if (isset($_POST["submit"])) {
   }
 }
 
-include "../includes/headerNoLogueado.php";
+include "../includes/headerAdmin.php";
 ?>
 
 <main>
 
   <div class="container contenedorGrisOsc mb-3">
-    <p class="text-light text-center fs-4 fw-bolder mt-3 pt-3 ">Registro</p>
+    <p class="text-light text-center fs-4 fw-bolder mt-3 pt-3 ">Ingrese los datos del nuevo usuario:</p>
 
-    <form class="p-1" action="registro.php" method="post">
+    <form class="p-1" action="addUserAdmin.php" method="post">
       <div class="main-user-info d-flex flex-wrap justify-content-between p-2">
 
         <div class="user-input-box d-flex flex-wrap w-50">
@@ -143,7 +151,7 @@ include "../includes/headerNoLogueado.php";
         </div>
 
         <div class="form-submit-btn btn-block text-center ">
-          <button type="submit" name="submit" class=" mt-3 mb-4 btn fs-5 text-dark btn-block amarillo p-3 ">Registrarse</button>
+          <button type="submit" name="submit" class=" mt-3 mb-4 btn fs-5 text-dark btn-block amarillo p-3 ">Añadir Usuario</button>
         </div>
       </div>
     </form>

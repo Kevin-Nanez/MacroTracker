@@ -35,7 +35,7 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
-          <a class="navbar-brand mt-sm-0 mb-auto" href="#">
+          <a class="navbar-brand mt-sm-0 mb-auto" href="../index.php">
             <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo"
               loading="lazy" />
           </a>

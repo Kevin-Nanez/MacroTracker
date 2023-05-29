@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- local CSS -->
-
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/styles.css">
-
   <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/reportes.css">
   <!-- CDNS -->
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -18,11 +17,9 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
-  <!-- HEADER -->
   <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -45,13 +42,10 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="../index.html">Inicio</a>
+              <a class="nav-link primerElemento" href="../Pages/reportes.php">Reportes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primerElemento" href="#">Alimentos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="noticias.html">Noticias</a>
+              <a class="nav-link " href="../Pages/aprobarAlimentos.php">Solicitdues de alimentos</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -60,21 +54,24 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-          <!-- Icon -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
-            <li class="nav-item">
-              <a class="nav-link active primerElemento" href="login.html">Iniciar Sesión</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="registro.html">Registrarse</a>
-            </li>
-          </ul>
-        </div>
+            <!-- Icon -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
+              <li class="nav-item me-2 me-sm-0">
+                <a class="nav-link" href="../Pages/alimentos.php">Alimentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Pages/usuarios.php">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../includes/logout.php">Cerrar Sesión</a>
+              </li>
+            </ul>
+          </div>
         <!-- Right elements -->
       </div>
       <!-- Container wrapper -->
     </nav>
-    <!-- Navbar --
+    <!-- Navbar -->
 
 
     <!-- Background image -->

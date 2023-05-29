@@ -32,7 +32,7 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
-          <a class="navbar-brand mt-sm-0 mb-auto" href="#">
+          <a class="navbar-brand mt-sm-0 mb-auto" href="../index.php">
             <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo" loading="lazy" />
           </a>
           <!-- Left links -->
@@ -44,7 +44,7 @@
               <a class="nav-link primerElemento" href="crearAlimento.php">Crear Alimento</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../Pages/diario.php">Diario</a>
+              <a class="nav-link" href="../Pages/diario.php">Diario</a>
             </li>
           </ul>
           <!-- Left links -->

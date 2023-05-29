@@ -1,12 +1,11 @@
 
 <?php
 session_start();
-if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 2 ) {
-  include "../includes/headerLogueado.php";
-} else if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ){
+
+if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSION['privilegios'] == 1 ) {
   include "../includes/headerAdmin.php";
-} else{
-  include "../includes/headerNoLogueado.php";
+} else {
+  echo "<script>alert('No tiene permisos para realizar esta acción'); window.location.href = 'diario.php';</script>";
 }
 
 include "../includes/db.php";
@@ -22,18 +21,17 @@ if (isset($_POST["submit"])) {
   $ckal = $_POST["ckal"];
   $unidades = $_POST["unidades"];
   if (!empty($alimento) && !empty($descripcion) && !empty($proteinas) && !empty($carbos) && !empty($grasas) && !empty($ckal) && !empty($unidades)) {
-    $sql = "INSERT INTO solicitud_alimento (id_usuario, alimento, descripcion, id_unidades, calorias, proteinas, grasas, carbohidratos)
-    VALUES ('{$id_usuario}', '{$alimento}', '{$descripcion}', '{$unidades}', '{$ckal}' , {$proteinas}, {$grasas}, {$carbos})";
+    $sql = "INSERT INTO alimento ( alimento, descripcion, id_unidades, calorias, proteinas, grasas, carbohidratos)
+    VALUES ('{$alimento}', '{$descripcion}', '{$unidades}', '{$ckal}' , {$proteinas}, {$grasas}, {$carbos})";
   
       $result = mysqli_query($db, $sql);
       
       if($result){
-        echo "<script>alert('Alimento enviado con éxito'); window.location.href = 'diario.php';</script>";
+        echo "<script>alert('Alimento enviado con éxito'); window.location.href = 'alimentos.php';</script>";
       }
 } else {
-  echo "<script>alert('Campos Incompletos'); window.location.href = 'crearAlimento.php';</script>";
+  echo "<script>alert('Campos Incompletos'); window.location.href = 'addFoodAdmin.php';</script>";
 }
-
 }
 
 
@@ -48,7 +46,7 @@ if (isset($_POST["submit"])) {
 
     <div class="container contenedorGrisOsc mt-3 mb-3">
         <h1 class="text-light text-center fs-4 fw-bolder mt-3 pt-3">Crear Alimento</h1>
-        <form action="crearAlimento.php" method="post" class="p-3" id="formularioCrearAlimento">
+        <form action="addFoodAdmin.php" method="post" class="p-3" id="formularioCrearAlimento">
           <div class="main-food-info d-flex flex-wrap justify-content-between p-2">
             
             <div class="user-input-box d-flex flex-wrap w-50 pe-2">

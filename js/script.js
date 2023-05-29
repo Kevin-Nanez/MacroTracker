@@ -1,82 +1,134 @@
 
 $(document).ready(function () {
-  // redirigir a diario cuando se de click en un boton
-  $(".redirigirDiario").on("click", function () {
-    event.preventDefault();
-    window.location.href = "../Pages/diario.html";
-  });
-  // redirigir a iniciar sesion cuando se de click en un boton
-  $(".redirigirLogin").on("click", function () {
-  
-    window.location.href = "../Pages/login.html";
-  });
-  $(".redirigirAgregar").on("click", function () {
-    event.preventDefault();
-    window.location.href = "../Pages/agregaraAlimento.html";
-  });
 
-  $(".redirigirCrearar").on("click", function () {
-    event.preventDefault();
+$(".borrarUsuario").on("click",function(){
+  var idusuario = $(this).closest("tr").find("td[data-title='ID:']").text().trim();
+  window.location.href = "../includes/delete_user.php?id=" + idusuario;
+});
 
-    window.location.href = "../Pages/crearAlimento.html";
-  });
+$(".updateUsuario").on("click", function() {
+  var idusuario = $(this).closest("tr").find("td[data-title='ID:']").text().trim();
+  window.location.href = "../includes/update_user.php?id=" + idusuario;
+});
 
-  $(".redirigirNoticias").on("click", function () {
-    event.preventDefault();
+$(".borrarAlimentoBD").on("click",function(){
+  var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();
+  window.location.href = "../includes/delete_alimento.php?id=" + idalimento;
+});
 
-    window.location.href = "../Pages/noticias.html";
-  });
+$(".borrarsolicitud").on("click",function(){
+  var idalimento = $(this).closest("tr").find("td[data-title='Alimento:']").text().trim();
+  window.location.href = "../includes/delete_solicitud.php?id=" + idalimento;
+});
+
+$(".aceptarsolicitud").on("click",function(){
+  var idalimento = $(this).closest("tr").find("td[data-title='Alimento:']").text().trim();
+  window.location.href = "../includes/aceptar_solicitud.php?id=" + idalimento;
+});
+
+
+$(".nuevaComida").on("click",function(){
+  window.location.href = "../pages/nuevaComida.php";
+});
+
+$(".updateAlimentoBD").on("click", function() {
+  var idalimento = $(this).closest("tr").find("td[data-title='iDAlimento:']").text().trim();
+  window.location.href = "../pages/update_alimento.php?id=" + idalimento;
+});
+
+$(".addUserAdmin").on("click",function(){
+  window.location.href = "../Pages/addUserAdmin.php";
+});
+
+$(".addFoodAdmin").on("click",function(){
+  window.location.href = "../Pages/addFoodAdmin.php";
+});
+
 
   $(".info_alimento").on("click", function () {
-    event.preventDefault();
+    var idalimento = $(this).closest("tr").find(".d-none").text();
+    var calorias = $(this).closest("tr").find("td[data-title='Información:']").find("p:contains('kcal')").text().trim();
+    calorias = calorias.replace(/[^\d.]/g, "");
 
-    window.location.href = "../Pages/infoalimento.html";
+    var proteinas = $(this).closest("tr").find("td[data-title='Información:']").find("p:contains('P:')").text().trim();
+    proteinas = proteinas.replace(/[^\d.]/g, "");
+
+    var grasas = $(this).closest("tr").find("td[data-title='Información:']").find("p:contains('G:')").text().trim();
+    grasas = grasas.replace(/[^\d.]/g, "");
+
+    var carbohidratos = $(this).closest("tr").find("td[data-title='Información:']").find("p:contains('C:')").text().trim();
+    carbohidratos = carbohidratos.replace(/[^\d.]/g, "");
+
+    var cantidad = $(this).closest("tr").find("td[data-title='Cantidad:']").text().trim();
+    // Elimina el texto no deseado y deja solo el valor numérico
+    cantidad = cantidad.replace(/[^\d.]/, " ");
+    window.location.href = "../Pages/infoalimento.php?id=" + idalimento + "&cantidad=" + cantidad + "&calorias=" + calorias + "&proteinas=" + proteinas + "&grasas=" + grasas + "&carbihidratos=" + carbohidratos ;
   });
 
   $(".preventD").on("click", function(){
     event.preventDefault();
 
-  })
+  });
 
+  $(".aprobar").on("click",function(){
+    window.location.href= "../pages/aprobarAlimentos.php";
+  });
 
+  $(".diaanterior").on("click", function() {
 
+    window.location.href = "../pages/diaanterior.php";
+  });
 
-  //enviar info crear alimento
-  $('#formularioCrearAlimento').submit(function (event) {
-    event.preventDefault(); // Evita que se envíe el formulario automáticamente
+  $(".diasiguiente").on("click", function() {
 
-    // Verifica que todos los campos tengan un valor
-    var camposVacios = false;
-    $(this).find('input[type!="submit"],textarea').each(function () {
-      if ($(this).val() === '') {
-        camposVacios = true;
-        return false; // Sale del bucle si encuentra un campo vacío
-      }
-    });
+    window.location.href = "../pages/diasiguiente.php";
+  });
 
-    // Si hay algún campo vacío, muestra un mensaje de error
-    if (camposVacios) {
-      alert('Por favor, completa todos los campos antes de enviar el formulario');
-      return;
-    } else {
-      setTimeout(() => {
-        window.location.href = "../Pages/crearAlimento.html";
-      }
-        , 1000)
-    }
-
-
-    // Si llegamos hasta aquí, significa que todos los campos tienen un valor
-    // Puedes enviar el formulario usando AJAX, por ejemplo:
-    // var formData = $(this).serialize();
-    //$.post($(this).attr('action'), formData, function(response) {
-    // Procesa la respuesta del servidor aquí
-    //});
+  $(".cambiarfecha").on("click", function() {
+    var dia = $("#selectDia").val();
+    var mes = $("#selectMes").val();
+    var year = $("#selectAnio").val();
+  
+    window.location.href = "../pages/cambiarfecha.php?dia=" + dia + "&mes=" + mes + "&year=" + year;
   });
 
 
+  $(".addAlimentoComida").on("click", function() {
+    var id_comida = $(this).data("id_comida");
+    window.location.href = "../pages/agregarAlimento.php?id_comida=" + id_comida;
+  });
 
-  
+  $(".crearAlimento").on("click",function(){
+    window.location.href = "../Pages/crearAlimento.php";
+  });
 
+
+  $(".addAlimentoComidacant").on("click", function() {
+    var id_alimento = $(this).data("id");
+    var cantidad = $(this).closest(".container-add").find(".cantidadalimento").val();
+    var idcomida = $(this).closest(".container-add").find(".id_comida").text();
+
+    if(cantidad > 0){
+    window.location.href = "../Pages/addAlimentoComida.php?id_alimento=" + id_alimento + "&cantidad=" + cantidad + "&idcomida=" + idcomida;
+    }else{
+      alert('Ingrese una cantidad valida');
+    }
+  });
+
+  $(".eliminarAlimentodeComida").on("click", function() {
+    var id_alimentos_comida = $(this).closest('td').find('p.d-none').text();
+    window.location.href = "../pages/eliminarAlimentodeComida.php?id_alimentos_comida=" + id_alimentos_comida;
+  });
+
+  $(".editarAlimentodeComida").on("click", function() {
+    var id_alimentos_comida = $(this).closest('td').find('p.d-none').text();
+    window.location.href = "../pages/editarAlimentodeComida.php?id_alimentos_comida=" + id_alimentos_comida;
+  });
+
+  $(".guardar").on("click", function() {
+    var id_alimentos_comida = $(this).closest('.row').find('.d-none p').text();
+    var cantidad = $(this).closest('.row').find('.cantidadalimento').val();
+    window.location.href = "../pages/guardar.php?id_alimentos_comida=" + id_alimentos_comida + "&cantidad=" + cantidad;
+  });
 
 });

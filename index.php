@@ -1,3 +1,7 @@
+<?php
+session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,6 +21,7 @@
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 
+  <title>Index</title>
 </head>
 
 <body>
@@ -26,9 +31,7 @@
       <!-- Container wrapper -->
       <div class="container-fluid">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
 
@@ -36,8 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Navbar brand -->
           <a class="navbar-brand mt-sm-0 mb-auto" href="#">
-            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo"
-              loading="lazy" />
+            <img src="../Assets/img/Enchanted_Golden_Apple_JE1_BE1.gif" class="ps-2 d-none d-sm-block" height="30" alt="MDB Logo" loading="lazy" />
           </a>
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
@@ -54,16 +56,16 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            <!-- Icon -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
-              <li class="nav-item me-2 me-sm-0">
-                <a class="nav-link" href="Pages/login.php">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Pages/registro.php">Registrarse</a>
-              </li>
-            </ul>
-          </div>
+          <!-- Icon -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold">
+            <li class="nav-item me-2 me-sm-0">
+              <a class="nav-link" href="Pages/login.php">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Pages/registro.php">Registrarse</a>
+            </li>
+          </ul>
+        </div>
         <!-- Right elements -->
       </div>
       <!-- Container wrapper -->
@@ -104,39 +106,41 @@
             </h2>
 
             <p class="text-justify p-1">
-              Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package
-              managed installs don’t include documentation or our full build scripts. You can also use any demo from our
-              Examples repo to quickly jumpstart Bootstrap projects.
-            </p>
+              Somos una herramienta diseñada para ayudarte a llevar un registro de las calorías que consumes diariamente proporcionándote información nutricional sobre los alimentos y bebidas que ingieres. También podemos ayudarte a establecer metas de consumo de calorías, mantener un diario de alimentos, realizar un seguimiento de tus macros (carbohidratos, proteínas y grasas), mantenerte informado sobre nuevas noticias, descubrimientos científicos y modas con respecto a la nutrición alimentaria y ofrecerte guías o consejos nutricionales para ayudarte a alcanzar tus objetivos de salud y bienestar.
           </div>
-          <div
-            class="container bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
+          <div class="container bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
             <div>
-              <img class="img-fluid paddingsmall" src="Assets/img/index/calorias.jpg"
-                alt="frutas y verduras con contenido calorico">
+              <img class="img-fluid paddingsmall" src="Assets/img/index/calorias.jpg" alt="frutas y verduras con contenido calorico">
             </div>
           </div>
         </div>
         <!-- fin row 1 -->
 
         <div class="row p-2 rowreverse mt-3 mb-3 ">
-          <div
-            class="container  bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
+          <div class="container  bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
             <div>
-              <img class="img-fluid paddingsmall" src="Assets/img/index/calorias.jpg"
-                alt="frutas y verduras con contenido calorico">
+              <img class="img-fluid paddingsmall" src="Assets/img/index/salud.jpeg" alt="frutas y verduras con contenido calorico">
             </div>
           </div>
           <div class="container-fluid bg-light col-md-5 col-lg-6 col-xl-8 col-12 rounded-7">
             <h2 class="text-dark pt-2 fs-4 mb-0">
-              ¿Qué ventajas tiene usar MacroTracker?
+              ¿Como MacroTracker contribuye a la mejora de la salud?
             </h2>
 
             <p class="text-justify p-1">
-              Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package
-              managed installs don’t include documentation or our full build scripts. You can also use any demo from our
-              Examples repo to quickly jumpstart Bootstrap projects.
+            MacroTracker es una herramienta que permite contabilizar las calorías ingeridas y ofrece una serie de beneficios que contribuyen a la mejora de la salud a travez de los siguientes aspectos: 
             </p>
+            <ol>
+              <li>
+                <p>Conciencia alimentaria: Al utilizar MacroTracker, los usuarios se vuelven más conscientes de las calorías que consumen diariamente.</p>
+              </li>
+              <li>
+                <p>Control de peso: El seguimiento y monitoreo de la ingesta calórica a través de MacroTracker permite a los usuarios mantener un peso saludable. </p>
+              </li>
+              <li>
+                <p>Seguimiento de nutrientes: Además de contar calorías, MacroTracker también permite realizar un seguimiento de los macronutrientes (carbohidratos, proteínas y grasas) consumidos.</p>
+              </li>
+            </ol>
           </div>
         </div>
         <!-- fin row 2 -->
@@ -147,16 +151,14 @@
             </h2>
 
             <p class="text-justify p-1">
-              Install Bootstrap’s source Sass and JavaScript files via npm, RubyGems, Composer, or Meteor. Package
-              managed installs don’t include documentation or our full build scripts. You can also use any demo from our
-              Examples repo to quickly jumpstart Bootstrap projects.
+              Es tan sencillo como iniciar sesión para revisar las múltiples utilidades que tiene el sistema.</p>
+            <p class="text-justify p-1">
+              Una vez hecho esto, podrás acceder a las diferentes secciones de MacroTracker, así como la función principal de MacroTracker, el contador de calorías, en el cual podrás revisar los diferentes alimentos existentes para poder añadirlos a tu diario, o inclusive en caso de no encontrar el alimento en nuestra base de datos, podrás crear tu el alimento, detallando los valores nutrimentales que contiene. De esta manera, podrás llevar un conteo de los macronutrientes que estarías ingiriendo, así como también buscar cumplir con tu meta-objetivo que te proveerá el sistema dependiendo del plan que desees seguir.
             </p>
           </div>
-          <div
-            class="container bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
+          <div class="container bg-light p-0 col-md-6 col-lg-5 col-12 col-xl-3 d-flex align-items-center justify-content-center">
             <div>
-              <img class="img-fluid paddingsmall" src="Assets/img/index/avenaModificada.jpg"
-                alt="frutas y verduras con contenido calorico">
+              <img class="img-fluid paddingsmall" src="Assets/img/index/avenaModificada.jpg" alt="frutas y verduras con contenido calorico">
             </div>
           </div>
         </div>
@@ -164,16 +166,30 @@
       </div>
 
     </div>
-    
+
     <aside class="p-3 ms-0 m-2 mt-4 bg-light rounded-7 d-flex flex-column align-items-center ">
-      <h4 class="text-dark text-center fs-5">¿Como MacroTracker contribuye a la mejora de la salud?</h4>
-      <p class="text-justify fs-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies libero vitae dui sagittis, ut mollis felis posuere.</p>
-      <ul class="text-start align-self-start">
-        <li>Puntos</li>
-        <li>Puntos</li>
-        <li>Puntos</li>
-        <li>Puntos</li>
-      </ul>
+      <h4 class="text-dark text-center fs-5">
+        ¿Qué ventajas tiene usar MacroTracker?
+      </h4>
+
+      <ol class="text-justify align-self-start ">
+        <li>
+          <p>Conciencia alimentaria: Al utilizar MacroTracker, estarás más consciente de las calorías que consumes diariamente. Esto te ayudará a tomar decisiones más informadas sobre tu ingesta calórica.</p>
+        </li>
+        <li>
+          <p>Control de peso: Al registrar y monitorear tu ingesta calórica, podrás alcanzar tus objetivos de pérdida, mantenimiento o ganancia de peso.</p>
+        </li>
+        <li>
+          <p>Personalización de metas: MacroTracker te permite establecer metas personalizadas de consumo de calorías según tus necesidades y objetivos individuales.</p>
+        </li>
+        <li>
+          <p>Seguimiento de nutrientes: Además de contar calorías, esta herramienta puede ayudarte a realizar un seguimiento de los macronutrientes (carbohidratos, proteínas y grasas) que consumes.</p>
+        </li>
+        <li>
+          <p>Conocimiento nutricional: MacroTracker proporciona información detallada sobre la composición nutricional de los alimentos y bebidas que consumes.</p>
+        </li>
+      </ol>
+
       <a href="Pages/registro.html" class="btn  grisclaro  mt-3">Registrarse</a>
     </aside>
 
@@ -184,7 +200,7 @@
     <!-- Grid container -->
     <div class=" container p-4">
     <!-- Section: Iframe -->
-    <section >
+    <section>
       <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
           <div class="ratio ratio-16x9">

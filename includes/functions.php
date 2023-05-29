@@ -18,6 +18,8 @@ function getAlimentos(){
     }
 }
 
+
+
 function getUsuarios(){
     try{
         require "db.php";
