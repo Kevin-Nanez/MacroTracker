@@ -318,7 +318,7 @@ include "../includes/db.php";
         </button>
       </div>
       <div class="col-sm">
-        <button class="btn mt-4 fs-5 amarillo text-dark redirigirCrearar">
+        <button class="btn mt-4 fs-5 amarillo text-dark crearAlimento">
           Crear Alimento
         </button>
       </div>

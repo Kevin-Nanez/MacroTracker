@@ -125,8 +125,6 @@ $(".addFoodAdmin").on("click",function(){
     window.location.href = "../pages/editarAlimentodeComida.php?id_alimentos_comida=" + id_alimentos_comida;
   });
 
-
-
   $(".guardar").on("click", function() {
     var id_alimentos_comida = $(this).closest('.row').find('.d-none p').text();
     var cantidad = $(this).closest('.row').find('.cantidadalimento').val();

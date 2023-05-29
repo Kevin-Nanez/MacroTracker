@@ -70,7 +70,7 @@ $resultquery = mysqli_query($db,$sqlquery);
           </tbody>
         </table>
       </div>
-          <button class="btn mt-4 fs-5 amarillo text-dark redirigirAlimento">
+          <button class="btn mt-4 fs-5 amarillo text-dark addFoodAdmin">
             Añadir Alimento
           </button>
     </div>

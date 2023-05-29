@@ -1,3 +1,7 @@
+<?php
+session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,6 +21,7 @@
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 
+  <title>Index</title>
 </head>
 
 <body>
