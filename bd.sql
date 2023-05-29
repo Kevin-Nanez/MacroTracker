@@ -217,13 +217,6 @@ FOREIGN KEY (fecha) REFERENCES dia(fecha),
 FOREIGN KEY (id_usuario) REFERENCES dia(id_usuario)
 );
 
-INSERT INTO comida(fecha, id_usuario, num_comida) VALUES
-("2023-05-10",2,1), ("2023-05-10",2,2), ("2023-05-10",2,3),
-("2023-05-10",3,1), ("2023-05-10",3,2), ("2023-05-10",3,3),("2023-05-10",3,4),
-("2023-05-11",2,1), ("2023-05-11",2,2), ("2023-05-11",2,3),
-("2023-05-11",3,1), ("2023-05-11",3,2), ("2023-05-11",3,3),("2023-05-11",3,4);
-
-
 CREATE TABLE alimentos_comida(
 id_alimentos_comida INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 id_alimento INT NOT NULL,
@@ -232,32 +225,3 @@ cantidad DECIMAL(7,2),
 FOREIGN KEY (id_alimento) REFERENCES alimento(id_alimento),
 FOREIGN KEY (id_comida) REFERENCES comida(id_comida)
 );
-
-INSERT INTO alimentos_comida (id_alimento, id_comida, cantidad) VALUES
-(1, 5, 3.50),
-(2, 6, 5.00),
-(3, 7, 7.50),
-(4, 4, 10.00),
-(5, 5, 12.50),
-(6, 5, 15.00),
-(7, 4, 17.50),
-(8, 4, 20.00),
-(9, 4, 22.50),
-(10, 4, 25.00),
-(11, 4, 27.50),
-(12, 4, 30.00),
-(13, 4, 32.50),
-(16, 5, 7),
-(17, 6, 8),
-(18, 7, 9),
-(19, 4, 10),
-(20, 5, 11),
-(21, 6, 12),
-(22, 7, 13),
-(23, 4, 14),
-(24, 5, 15),
-(25, 6, 6),
-(26, 7, 7),
-(27, 4, 8),
-(28, 5, 9),
-(14, 4, 35.00);
