@@ -33,9 +33,11 @@ if (isset($_POST["submit"])) {
 
   if (!empty($alimento) && !empty($descripcion) && !empty($proteinas) && !empty($carbohidratos) && !empty($grasas) && !empty($calorias) && !empty($unidades)) {
 
-    $sql1 = "UPDATE alimento SET alimento = '{$alimento}', descripcion = '{$descripcion}', id_unidades = {$unidades}, calorias = {$calorias}, proteinas = {$proteinas}, grasas = {$grasas}, carbohidratos = {$carbohidratos} WHERE id_alimento = {$id};";
+    $sql1 = "UPDATE alimento SET alimento = '{$alimento}', descripcion = '{$descripcion}', id_unidades = {$unidades}, calorias = {$calorias}, proteinas = {$proteinas}, grasas = {$grasas}, carbohidratos = {$carbohidratos} WHERE id_alimento = $id;";
+
 
     $result1 = mysqli_query($db, $sql1);
+    
   }
 }
 
@@ -78,6 +80,14 @@ if (isset($_POST["submit"])) {
         <div class="user-input-box d-flex flex-wrap w-50 pe-2">
           <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contenido</label>
           <select name="unidades" class="form-select " id="content">
+          <option value="" disabled selected>Selecciona una opción</option>
+                <option value="1">100 g</option>
+                <option value="2">Una unidad</option>
+                <option value="3">100 ml</option>
+                <option value="4">Una taza</option>
+                <option value="5">Una onza(oz)</option>
+                <option value="6">Una cucharada</option>
+              </select>
         </div>
 
         <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
