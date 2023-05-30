@@ -351,8 +351,7 @@ include "../includes/db.php";
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     <h6>Kevin Josefath Nañez de la Rosa</h6>
     <?php
-    $_SESSION['alimentos'] = $alimentoS;
-    echo $alimentoS; ?>
+    $_SESSION['alimentos'] = $alimentoS;?>
     <h6>Jorge Luis Picazo Picazo</h6>
     <h6>Daniel Eduardo Mesias Cortina</h6>
     <a class="text-white" target="_blank" href="https://www.uanl.mx/">UANL</a>

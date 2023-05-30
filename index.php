@@ -190,7 +190,7 @@ session_destroy();
         </li>
       </ol>
 
-      <a href="Pages/registro.html" class="btn  grisclaro  mt-3">Registrarse</a>
+      <a href="Pages/registro.php" class="btn  grisclaro  mt-3">Registrarse</a>
     </aside>
 
 
