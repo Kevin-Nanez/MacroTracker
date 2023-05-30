@@ -46,7 +46,7 @@ $(".addFoodAdmin").on("click",function(){
 
 
   $(".info_alimento").on("click", function () {
-    var idalimento = $(this).closest("tr").find(".d-none").text();
+    var idalimento = $(this).closest("tr").find(".iddelalimento").text();
     var calorias = $(this).closest("tr").find("td[data-title='Información:']").find("p:contains('kcal')").text().trim();
     calorias = calorias.replace(/[^\d.]/g, "");
 

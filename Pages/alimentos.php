@@ -34,7 +34,7 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
           <?php while ($alimento = mysqli_fetch_assoc($queryAlimentos)) { ?>
 
             <tr class="registrodiario mt-3">
-              <td data-title="iDAlimento:" class="align-middle cursor-pointer info_alimento"> <?php echo $alimento["id_alimento"];   ?>  </td>
+              <td data-title="iDAlimento:" class="align-middle "> <?php echo $alimento["id_alimento"];   ?>  </td>
               <td data-title="Cantidad: " class="align-middle"><?php echo $alimento["alimento"];   ?></td>
               <td data-title="Información:" class="align-middle">
                 <div class="row">
