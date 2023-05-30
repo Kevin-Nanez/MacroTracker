@@ -279,7 +279,7 @@ include "../includes/db.php";
                           ?>
                           kcal</p>
                          <!-- ojo aqui  -->
-                        <p class="d-none"><?php echo $rowComida['id_alimento']; ?></p>
+                        <p class="d-none iddelalimento"><?php echo $rowComida['id_alimento']; ?></p>
                       </div>
                     </div>
                   </td>
