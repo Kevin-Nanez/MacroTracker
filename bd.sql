@@ -54,16 +54,27 @@ SET SQL_SAFE_UPDATES = 0;
 UPDATE dia INNER JOIN usuario ON dia.id_usuario = usuario.id_usuario
 SET dia.objetivo = usuario.objetivo;
 
+-- Crear la tabla unidades antes de la tabla alimento
+CREATE TABLE unidades (
+  id_unidades INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  descripcion VARCHAR(30)
+);
+
+
+INSERT INTO unidades (descripcion) VALUES
+("100 g"),("Unidad(es)"),("100 ml"),("Taza(s)"),("Onza(s)"),("Cucharada(s)");
+
 
 CREATE TABLE alimento(
-id_alimento INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-alimento VARCHAR(35) NOT NULL UNIQUE,
-descripcion VARCHAR(300) NOT NULL,
-calorias INT,
-proteinas DECIMAL(5,1),
-grasas DECIMAL(5,1),
-carbohidratos DECIMAL(5,1),
-id_unidades INT NOT NULL
+  id_alimento INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  alimento VARCHAR(35) NOT NULL UNIQUE,
+  descripcion VARCHAR(300) NOT NULL,
+  calorias INT,
+  proteinas DECIMAL(5,1),
+  grasas DECIMAL(5,1),
+  carbohidratos DECIMAL(5,1),
+  id_unidades INT NOT NULL,
+  FOREIGN KEY (id_unidades) REFERENCES unidades(id_unidades)
 );
 
 -- proteinas
@@ -89,7 +100,7 @@ INSERT INTO alimento (alimento, descripcion, calorias, proteinas, grasas, carboh
 INSERT INTO alimento (alimento, descripcion, calorias, proteinas, grasas, carbohidratos, id_unidades) VALUES
 ("Leche de vaca", "Leche de vaca entera", 60, 3.2, 3.6, 4.8, 3),
 ("Yogur natural", "Yogur natural sin azúcar", 50, 4.0, 3.0, 5.0, 1),
-("Leche descremada","Leche descremada",3, 35, 3.6, 0.1, 4.8),
+("Leche descremada", "Leche descremada", 35, 3.6, 0.1, 4.8, 3),
 ("Queso cheddar", "Queso cheddar", 402, 24.9, 33.1, 1.3, 2),
 ("Crema de leche", "Crema de leche", 345, 2.8, 35.0, 2.0, 4),
 ("Leche de almendra", "Leche de almendra sin azúcar", 15, 0.5, 1.1, 0.5, 3),
@@ -197,15 +208,6 @@ VALUES
 (1, 'Tacos al pastor', 'Deliciosos tacos de carne de cerdo marinada con especias y adobo, servidos en tortillas de maíz.', 1, 450, 25.5, 12.3, 32.7),
 (1, 'Enchiladas verdes', 'Tortillas de maíz rellenas de pollo deshebrado, bañadas en salsa verde y queso rallado.', 1, 380, 18.2, 14.9, 42.6);
 
-
-CREATE TABLE unidades (
-id_unidades INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-descripcion VARCHAR(30)
-);
-
-
-INSERT INTO unidades (descripcion) VALUES
-("100 g"),("Unidad(es)"),("100 ml"),("Taza(s)"),("Onza(s)"),("Cucharada(s)");
 
 
 CREATE TABLE comida(
