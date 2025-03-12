@@ -1,7 +1,7 @@
 <?php 
 $server = "localhost";
 $user = "root";
-$pass = "Kevin y gael";
+$pass = "";
 $database = "macrotracker";
 
 $db= mysqli_connect($server,$user,$pass,$database);
