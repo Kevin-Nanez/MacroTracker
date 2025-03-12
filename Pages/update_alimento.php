@@ -9,7 +9,10 @@ if (isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario']) && $_SESSI
 
 include "../includes/db.php";
 $id = $_GET['id'];
-$sql = "SELECT * FROM alimento WHERE id_alimento='$id';";
+$sql = "SELECT alimento.*, unidades.descripcion as UnidadesDescripcion
+FROM alimento
+INNER JOIN unidades ON alimento.id_unidades = unidades.id_unidades
+WHERE alimento.id_alimento = '$id';";
 $result = mysqli_query($db, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -19,6 +22,8 @@ $proteinas = $row['proteinas'];
 $calorias = $row['calorias'];
 $carbohidratos = $row['carbohidratos'];
 $grasas = $row['grasas'];
+echo "<script>console.log('ID de unidad: " . $row['id_unidades'] . "');</script>";
+
 $unidades = $row['id_unidades'];
 
 if (isset($_POST["submit"])) {
@@ -37,7 +42,6 @@ if (isset($_POST["submit"])) {
 
 
     $result1 = mysqli_query($db, $sql1);
-    
   }
 }
 
@@ -79,17 +83,16 @@ if (isset($_POST["submit"])) {
 
         <div class="user-input-box d-flex flex-wrap w-50 pe-2">
           <label class="text-light fs-5 fw-bolder mb-2 mt-2">Contenido</label>
-          <select name="unidades" class="form-select " id="content">
-          <option value="" disabled selected>Selecciona una opción</option>
-                <option value="1">100 g</option>
-                <option value="2">Una unidad</option>
-                <option value="3">100 ml</option>
-                <option value="4">Una taza</option>
-                <option value="5">Una onza(oz)</option>
-                <option value="6">Una cucharada</option>
-              </select>
+          <select name="unidades" class="form-select" id="content">
+            <option value="" disabled>Selecciona una opción</option>
+            <option value="1" <?php if ($unidades == 1) echo 'selected'; ?>>100 g</option>
+            <option value="2" <?php if ($unidades == 2) echo 'selected'; ?>>Una unidad</option>
+            <option value="3" <?php if ($unidades == 3) echo 'selected'; ?>>100 ml</option>
+            <option value="4" <?php if ($unidades == 4) echo 'selected'; ?>>Una taza</option>
+            <option value="5" <?php if ($unidades == 5) echo 'selected'; ?>>Una onza(oz)</option>
+            <option value="6" <?php if ($unidades == 6) echo 'selected'; ?>>Una cucharada</option>
+          </select>
         </div>
-
         <div class="user-input-box d-flex flex-wrap w-50 ps-2 pe-0">
           <label class="text-light fs-5 fw-bolder mb-2 mt-2">Grasas (g)</label>
           <input name="grasas" type="number" id="fat" value="<?php echo $grasas; ?>" min="0" step="0.1">
